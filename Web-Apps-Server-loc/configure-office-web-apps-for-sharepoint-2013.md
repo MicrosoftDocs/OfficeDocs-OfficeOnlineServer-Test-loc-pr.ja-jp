@@ -1,4 +1,4 @@
-﻿---
+---
 title: SharePoint 2013 の Office Web アプリケーションを構成します。
 TOCTitle: SharePoint 2013 の Office Web アプリケーションを構成します。
 ms:assetid: a5276781-133b-413c-beca-b851e17c2081
@@ -113,11 +113,17 @@ Office Web Apps サーバー はゾーンの概念を使用して、ホスト (�
 
 このコマンドを実行して \[**False**\] が返された場合は、次のコマンドを実行して値を \[**True**\] に設定します。
 
+```
     $config = (Get-SPSecurityTokenServiceConfig)
+```
 
+```
     $config.AllowOAuthOverHttp = $true
+```
 
+```
     $config.Update()
+```
 
 次のコマンドをもう一度実行して、AllowOAuthOverHttp が \[**True**\] に設定されたことを確認します。
 
