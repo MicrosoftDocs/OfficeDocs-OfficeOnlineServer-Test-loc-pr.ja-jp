@@ -48,9 +48,9 @@
                                          "extendBreadcrumb":  true,
                                          "ROBOTS":  "INDEX,FOLLOW",
                                          "uhfHeaderId":  "MSDocsHeader-Office",
-                                         "ms.topic":  "Mike Plumley",
-                                         "author":  "dstrome",
-                                         "ms.author":  "dstrome",
+                                         "ms.topic":  "conceptual",
+                                         "author":  "Mike Plumley",
+                                         "ms.author":  "Mike Plumley",
                                          "ms.prod":  "Office-web-server",
                                          "ms.technology":  "Office-web"
                                      },
