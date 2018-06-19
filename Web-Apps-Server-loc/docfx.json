@@ -48,10 +48,11 @@
                                          "extendBreadcrumb":  true,
                                          "ROBOTS":  "INDEX,FOLLOW",
                                          "uhfHeaderId":  "MSDocsHeader-Office",
-                                         "ms.topic":  "conceptual",
-                                         "author":  "",
-                                         "ms.author":  "",
-                                         "ms.prod":  "Office"
+                                         "ms.topic":  "Mike Plumley",
+                                         "author":  "dstrome",
+                                         "ms.author":  "dstrome",
+                                         "ms.prod":  "Office-web-server",
+                                         "ms.technology":  "Office-web"
                                      },
                   "fileMetadata":  {
 
