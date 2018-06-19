@@ -49,9 +49,10 @@
                                          "ROBOTS":  "INDEX,FOLLOW",
                                          "uhfHeaderId":  "MSDocsHeader-Office",
                                          "ms.topic":  "conceptual",
-                                         "author":  "",
-                                         "ms.author":  "",
-                                         "ms.prod":  "Office"
+                                         "author":  "Mike Plumley",
+                                         "ms.author":  "Mike Plumley",
+                                         "ms.prod":  "Office-web-server",
+                                         "ms.technology":  "Office-web"
                                      },
                   "fileMetadata":  {
 
