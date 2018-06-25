@@ -134,7 +134,7 @@ Outlook Web App についての情報をお探しの IT 担当者の方 は、�
 <td><p>まず <a href="deploy-office-web-apps-server.md">Office Web Apps サーバーを実行するサーバーを準備します</a>。次に <a href="deploy-office-web-apps-server.md">Office Web Apps サーバーをインストールします</a>。そして最新の Office Web Apps サーバー 更新プログラムを適用します。その後<a href="deploy-office-web-apps-server.md">Office Web アプリケーション サーバーに言語パックをインストールします</a>。</p>
 <p><br />
 </p>
-<p>Office Web Apps サーバー の機能を評価するには、<a href="deploy-office-web-apps-server.md">単一サーバーの Office Web Apps サーバー ファームをテスト環境で展開します</a>。あるいは、展開をより安全なものにするには、<a href="e4d51dc4-6460-437d-aa8e-0ae4d3aa8cc5(office.15)#singlehttps">HTTPS を使用する単一サーバー Office Web Apps Server ファームの展開</a>も可能です。 多くのユーザーのサポートが必要な場合は、<a href="e4d51dc4-6460-437d-aa8e-0ae4d3aa8cc5(office.15)#multihttps">HTTPS を使用する負荷分散された複数サーバー Office Web Apps Server ファームの展開</a>もできます。</p>
+<p>Office Web Apps サーバー の機能を評価するには、<a href="deploy-office-web-apps-server.md">単一サーバーの Office Web Apps サーバー ファームをテスト環境で展開します</a>。あるいは、展開をより安全なものにするには、<a href="deploy-office-web-apps-server.md">HTTPS を使用する単一サーバー Office Web Apps Server ファームの展開</a>も可能です。 多くのユーザーのサポートが必要な場合は、<a href="deploy-office-web-apps-server.md">HTTPS を使用する負荷分散された複数サーバー Office Web Apps Server ファームの展開</a>もできます。</p>
 <p><br />
 </p>
 <p>Office Web Apps サーバー を展開した後は、ホストを構成する必要があります。Office Web Apps サーバー を使用するには、「<a href="configure-office-web-apps-for-sharepoint-2013.md">SharePoint 2013 の構成</a>」、「<a href="http://go.microsoft.com/fwlink/p/?linkid=256611">Exchange Server 2013 の構成</a>」および 「<a href="http://go.microsoft.com/fwlink/p/?linkid=256902">Lync Server 2013 の構成</a>」を参照してください。.</p>
