@@ -133,7 +133,7 @@ Office Web Apps を使用してドキュメントの編集したり表示する�
 
 ## 本番環境では HTTPS を使用します。
 
-以下の手順を開始する前に、「[HTTPS を使用する単一サーバー Office Web Apps Server ファームの展開](deploy-office-web-apps-server#office-web-apps-サーバー-を実行するサーバーの準備)」または「[HTTPS を使用する負荷分散された複数サーバー Office Web Apps Server ファームの展開](deploy-office-web-apps-server#http-を使用する-office-web-アプリケーション-サーバー-ファームの-1-台のサーバーを展開します)」に記載された手順に従って Office Web Apps サーバー がセットアップされていることを確認してください。
+以下の手順を開始する前に、「[HTTPS を使用する単一サーバー Office Web Apps Server ファームの展開](deploy-office-web-apps-server#https-を使用する単一サーバー-office-web-apps-サーバー-ファームの展開)」または「[HTTPS を使用する負荷分散された複数サーバー Office Web Apps Server ファームの展開](deploy-office-web-apps-server#https-を使用する負荷分散された複数サーバー-office-web-apps-サーバー-ファームの展開)」に記載された手順に従って Office Web Apps サーバー がセットアップされていることを確認してください。
 
 ## 手順 1: SharePoint 2013 管理シェルを開く
 
