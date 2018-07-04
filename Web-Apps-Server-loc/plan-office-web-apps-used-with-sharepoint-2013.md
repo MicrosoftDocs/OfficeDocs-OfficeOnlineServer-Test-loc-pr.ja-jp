@@ -69,7 +69,7 @@ Office Web Apps を SharePoint 2010 と共にインストールした場合、Sh
 
 Word、PowerPoint、Excel、および OneNote ファイルをクライアント アプリケーション (インストールされている場合) で開くか、ブラウザーで開くかを構成できます。既定では、SharePoint 2013が Office Web Apps サーバーを使用するように構成すると、Office ファイルはブラウザーで開かれます。以下の 2 つの方法で、クライアント アプリケーションがファイルを直接開くように既定の動作を変更できます。
 
-  - **SharePoint 2013 ファーム** [New-SPWOPIBinding](new-spwopibinding.md) および [Set-SPWOPIBinding](set-spwopibinding.md)Windows PowerShell コマンドレットを使用して、SharePoint 2013 ファームでファイルの種類ごとに既定のオープン動作を調整できます。
+  - **SharePoint 2013 ファーム** [New-SPWOPIBinding](https://docs.microsoft.com/en-us/powershell/module/sharepoint-server/New-SPWOPIBinding?view=sharepoint-ps) および [Set-SPWOPIBinding](https://docs.microsoft.com/en-us/powershell/module/sharepoint-server/Set-SPWOPIBinding?view=sharepoint-ps)Windows PowerShell コマンドレットを使用して、SharePoint 2013 ファームでファイルの種類ごとに既定のオープン動作を調整できます。
 
   - **サイト コレクションまたはドキュメント ライブラリ** サイト コレクション管理者およびユーザーが、Office ファイルをクライアント アプリケーションで開くかどうかを指定できます (インストールされている場合)。ユーザーは、この設定をドキュメント ライブラリのプロパティで変更できます。サイト コレクション管理者は、\[サイト コレクションの管理\] でこの設定を変更するか、Install-SPFeature コマンドレットを使用して OpenInClient 機能をインストールできます。詳細については、「[Install-SPFeature](https://technet.microsoft.com/ja-jp/library/ff607825\(v=office.15\))」を参照してください。
 

@@ -208,7 +208,7 @@ Office Web Apps サーバー を展開するだけであれば、Office Web Apps
 
   - **–EditingEnabled** を SharePoint 2013 で使用すると、Office Web Apps で編集できるようになります。このパラメーターを Lync Server 2013 で使用することはありません。このホストは編集をサポートしていないためです。
 
-翻訳サービス、プロキシ サーバー、クリップ アート サポート、およびオンライン ビューアーを構成するその他のパラメーターについては、「[New-OfficeWebAppsFarm](new-officewebappsfarm.md)」を参照してください。
+翻訳サービス、プロキシ サーバー、クリップ アート サポート、およびオンライン ビューアーを構成するその他のパラメーターについては、「[New-OfficeWebAppsFarm](https://docs.microsoft.com/en-us/powershell/module/officewebapps/new-officewebappsfarm?view=officewebapps-ps)」を参照してください。
 
 「500 Web サービスの例外」 または 「500.21 ? 内部サーバー エラー」メッセージが表示される場合
 
@@ -259,7 +259,7 @@ Office Web Apps サーバー が予期されるとおりに動作する場合は
 
   - **–EditingEnabled** はオプションで、SharePoint 2013 で使用すると、Office Web Apps で編集できるようになります。このパラメーターを Lync Server 2013 で使用することはありません。このホストは編集をサポートしていないためです。
 
-翻訳サービス、プロキシ サーバー、クリップ アート サポート、およびオンライン ビューアーを構成するその他のパラメーターについては、「[New-OfficeWebAppsFarm](new-officewebappsfarm.md)」を参照してください。
+翻訳サービス、プロキシ サーバー、クリップ アート サポート、およびオンライン ビューアーを構成するその他のパラメーターについては、「[New-OfficeWebAppsFarm](https://docs.microsoft.com/en-us/powershell/module/officewebapps/new-officewebappsfarm?view=officewebapps-ps)」を参照してください。
 
 「500 Web サービスの例外」 または 「500.21 ? 内部サーバー エラー」メッセージが表示される場合
 
@@ -324,7 +324,7 @@ Office Web Apps サーバー ファームに多数のトラフィックを見込
 
   - **–EditingEnabled** はオプションで、SharePoint 2013 で使用すると、Office Web Apps で編集できるようになります。このパラメーターを Lync Server 2013 で使用することはありません。このホストは編集をサポートしていないためです。
 
-翻訳サービス、プロキシ サーバー、クリップ アート サポート、およびオンライン ビューアーを構成するその他のパラメーターについては、「[New-OfficeWebAppsFarm](new-officewebappsfarm.md)」を参照してください。
+翻訳サービス、プロキシ サーバー、クリップ アート サポート、およびオンライン ビューアーを構成するその他のパラメーターについては、「[New-OfficeWebAppsFarm](https://docs.microsoft.com/en-us/powershell/module/officewebapps/new-officewebappsfarm?view=officewebapps-ps)」を参照してください。
 
 「500 Web サービスの例外」 または 「500.21 - 内部サーバー エラー」メッセージが表示される場合
 
@@ -334,7 +334,7 @@ Office Web Apps サーバー ファームに多数のトラフィックを見込
 
     New-OfficeWebAppsMachine -MachineToJoin "server1.contoso.com"
 
-これらのパラメーターの詳細については、「[New-OfficeWebAppsMachine](new-officewebappsmachine.md)」を参照してください。
+これらのパラメーターの詳細については、「[New-OfficeWebAppsMachine](https://docs.microsoft.com/en-us/powershell/module/officewebapps/new-officewebappsmachine?view=officewebapps-ps)」を参照してください。
 
 ## 手順 3: Office Web Apps サーバー ファームが正常に作成されたことを確認する
 
@@ -378,8 +378,8 @@ NET Framework 3.5 の機能がインストールされてから削除された�
 ## 関連項目
 
 
-[New-OfficeWebAppsFarm](new-officewebappsfarm.md)  
-[New-OfficeWebAppsMachine](new-officewebappsmachine.md)  
+[New-OfficeWebAppsFarm](https://docs.microsoft.com/en-us/powershell/module/officewebapps/new-officewebappsfarm?view=officewebapps-ps)  
+[New-OfficeWebAppsMachine](https://docs.microsoft.com/en-us/powershell/module/officewebapps/new-officewebappsmachine?view=officewebapps-ps)  
 
 
 [Office Web Apps サーバーのコンテンツ ロードマップ](content-roadmap-for-office-web-apps-server.md)  

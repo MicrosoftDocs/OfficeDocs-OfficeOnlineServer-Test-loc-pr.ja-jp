@@ -332,7 +332,7 @@ Office Web Apps サーバー トポロジがより複雑になった場合に留
 
   - **着信と発信を計画する。**インターネットに接続する展開では、すべての発信を NAT デバイス経由でルーティングします。マルチサーバー ファームでは、すべての着信をロード バランサーを使用して処理します。
 
-  - **Office Web Apps サーバー ファーム内のすべてのサーバーが 1 つのドメインに参加しており、同じ組織単位 (OU) の一部になっていることを確認する。**この OU に含まれない他のサーバーがファームに参加することを防ぐには、[New-OfficeWebAppsFarm](new-officewebappsfarm.md) コマンドレットの **FarmOU** パラメーターを使用します。
+  - **Office Web Apps サーバー ファーム内のすべてのサーバーが 1 つのドメインに参加しており、同じ組織単位 (OU) の一部になっていることを確認する。**この OU に含まれない他のサーバーがファームに参加することを防ぐには、[New-OfficeWebAppsFarm](https://docs.microsoft.com/en-us/powershell/module/officewebapps/new-officewebappsfarm?view=officewebapps-ps) コマンドレットの **FarmOU** パラメーターを使用します。
 
   - **すべての着信要求にハイパーテキスト転送プロトコル セキュア (HTTPS) を使用する。**
 
@@ -390,13 +390,13 @@ HTTP を使用している場合は、ロード バランサーから Office Web
 
 ## Office Web Apps サーバーファームに参加できるサーバーを OU メンバーシップに基づいて制限する
 
-対象サーバーの組織単位を作成してから、ファームを作成するときに FarmOU パラメーターを指定することで、無許可のサーバーが Office Web Apps サーバー ファームに参加するのを防ぐことができます。FarmOU パラメーターの詳細については、「[New-OfficeWebAppsFarm](new-officewebappsfarm.md)」を参照してください。
+対象サーバーの組織単位を作成してから、ファームを作成するときに FarmOU パラメーターを指定することで、無許可のサーバーが Office Web Apps サーバー ファームに参加するのを防ぐことができます。FarmOU パラメーターの詳細については、「[New-OfficeWebAppsFarm](https://docs.microsoft.com/en-us/powershell/module/officewebapps/new-officewebappsfarm?view=officewebapps-ps)」を参照してください。
 
 ## 許可リストを使用して Office Web Apps サーバーのホスト アクセスを制限する
 
 許可リストは、不要なホストが Office Web Apps サーバー ファームに接続して、同意なしにファームを使用してファイルを処理するのを防ぐセキュリティ機能です。承認されたホストを含むドメインを許可リストに追加することで、Office Web Apps サーバー がファイル処理要求 (ファイルの取得、メタデータの取得、ファイルの変更など) を許可するホストを制限できます。
 
-Office Web Apps サーバー ファームを作成した後で許可リストにドメインを追加できます。許可リストにドメインを追加する方法については、「[New-OfficeWebAppsHost](new-officewebappshost.md)」を参照してください。
+Office Web Apps サーバー ファームを作成した後で許可リストにドメインを追加できます。許可リストにドメインを追加する方法については、「[New-OfficeWebAppsHost](https://docs.microsoft.com/en-us/powershell/module/officewebapps/new-officewebappshost?view=officewebapps-ps)」を参照してください。
 
 
 > [!IMPORTANT]
@@ -406,19 +406,19 @@ Office Web Apps サーバー ファームを作成した後で許可リストに
 
 ## Office Web Apps サーバーを使用したオンライン ビューアーの計画
 
-既定では、Office Web Apps サーバー のインストール後にオンライン ビューアー機能が有効になります。組織でオンライン ビューアーの使用を計画している場合は、以下のガイドラインを確認してください。場合によっては、オンライン ビューアーの一部の機能を無効にすることをお勧めします。これらのガイドラインで参照するパラメーターは、Windows PowerShell のコマンドレット [New-OfficeWebAppsFarm](new-officewebappsfarm.md) と [Set-OfficeWebAppsFarm](set-officewebappsfarm.md) を使用して設定されます。
+既定では、Office Web Apps サーバー のインストール後にオンライン ビューアー機能が有効になります。組織でオンライン ビューアーの使用を計画している場合は、以下のガイドラインを確認してください。場合によっては、オンライン ビューアーの一部の機能を無効にすることをお勧めします。これらのガイドラインで参照するパラメーターは、Windows PowerShell のコマンドレット [New-OfficeWebAppsFarm](https://docs.microsoft.com/en-us/powershell/module/officewebapps/new-officewebappsfarm?view=officewebapps-ps) と [Set-OfficeWebAppsFarm](https://docs.microsoft.com/en-us/powershell/module/officewebapps/set-officewebappsfarm?view=officewebapps-ps) を使用して設定されます。
 
 ## オンライン ビューアーのセキュリティの考慮事項
 
 オンライン ビューアーを使用して Web ブラウザーで表示するためのファイルは、認証が要らないようにする必要があります。つまり、ファイルを公開する必要があります。これは、オンライン ビューアーがファイルの取得時に認証を実行できないためです。オンライン ビューアーで使用する Office Web Apps サーバー ファームは、イントラネットとインターネットのどちらか一方のみ (両方ではなく) にアクセスできるようにすることを強くお勧めします。Office Web Apps サーバー は、イントラネット URL とインターネット URL の要求を区別しないためです。たとえば、インターネット上の誰かがイントラネット URL を要求できると、内部文書が表示された場合に情報漏れが発生する可能性があります。
 
-同じ理由から、Office Web Apps サーバー をインターネットのみに接続するように設定した場合は、オンライン ビューアーの UNC サポートを無効にすることを強くお勧めします。UNC サポートを無効にするには、Windows PowerShell のコマンドレット [New-OfficeWebAppsFarm](new-officewebappsfarm.md) (新規ファーム用) または [Set-OfficeWebAppsFarm](set-officewebappsfarm.md) (既存ファーム用) を使用して OpenFromUncEnabled パラメーターを False に設定します。
+同じ理由から、Office Web Apps サーバー をインターネットのみに接続するように設定した場合は、オンライン ビューアーの UNC サポートを無効にすることを強くお勧めします。UNC サポートを無効にするには、Windows PowerShell のコマンドレット [New-OfficeWebAppsFarm](https://docs.microsoft.com/en-us/powershell/module/officewebapps/new-officewebappsfarm?view=officewebapps-ps) (新規ファーム用) または [Set-OfficeWebAppsFarm](https://docs.microsoft.com/en-us/powershell/module/officewebapps/set-officewebappsfarm?view=officewebapps-ps) (既存ファーム用) を使用して OpenFromUncEnabled パラメーターを False に設定します。
 
 追加のセキュリティ上の理由から、オンライン ビューアーでの表示は、10 MB 以下の Office ファイルに制限されます。
 
 ## オンライン ビューアーの構成オプション
 
-Windows PowerShell の以下のパラメーターを [New-OfficeWebAppsFarm](new-officewebappsfarm.md) (新規ファーム用) または [Set-OfficeWebAppsFarm](set-officewebappsfarm.md) (既存ファーム用) で使用して、オンライン ビューアーを構成できます。
+Windows PowerShell の以下のパラメーターを [New-OfficeWebAppsFarm](https://docs.microsoft.com/en-us/powershell/module/officewebapps/new-officewebappsfarm?view=officewebapps-ps) (新規ファーム用) または [Set-OfficeWebAppsFarm](https://docs.microsoft.com/en-us/powershell/module/officewebapps/set-officewebappsfarm?view=officewebapps-ps) (既存ファーム用) で使用して、オンライン ビューアーを構成できます。
 
   - **OpenFromUrlEnabled**   オンライン ビューアーのオンとオフを切り替えます。このパラメーターは、URL および UNC パスを持つファイルに関してオンライン ビューアーを制御します。新しい Office Web Apps サーバー ファームを作成したとき、既定ではこのパラメーターは False (無効) に設定されています。
 

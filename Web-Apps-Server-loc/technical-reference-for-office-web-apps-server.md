@@ -39,7 +39,7 @@ _**トピックの最終更新日:**2016-12-16_
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="windows-powershell-for-office-web-apps-server.md">Office Web Apps サーバーで使用できる Windows PowerShell</a></p></td>
+<td><p><a href="https://docs.microsoft.com/en-us/powershell/module/officewebapps/?view=officewebapps-ps">Office Web Apps サーバーで使用できる Windows PowerShell</a></p></td>
 <td><p>Office Web Apps サーバーで使用できる Windows PowerShell コマンドレットについて説明します。</p></td>
 </tr>
 </tbody>
