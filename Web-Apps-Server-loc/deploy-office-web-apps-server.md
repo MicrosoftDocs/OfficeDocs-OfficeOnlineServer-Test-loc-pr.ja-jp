@@ -234,6 +234,7 @@ Office Web Apps サーバー が予期されるとおりに動作する場合は
 ファームは、HTTP を介して Office Web Apps の機能をホストに提供する準備ができました。ホストを構成する方法の詳細については、「[SharePoint 2013 の Office Web アプリケーションを構成します。](configure-office-web-apps-for-sharepoint-2013.md)」を参照してください。
 
 ## HTTPS を使用する単一サーバー Office Web Apps サーバー ファームの展開
+<a name="singlehttps"> </a>
 
 ほとんどの運用環境でのセキュリティ機能には、HTTPS の使用を強く推奨します。また、Office Web Apps サーバー の機能性を Lync Server 2013 に提供したい場合は、HTTPS が必要となります。これでユーザーは、ブラウザーで PowerPoint ブロードキャストを見ることができます。HTTPS を使用する単一サーバーの Office Web Apps サーバー ファームのインストール方法をここに示します。「[HTTPS を使用した Office Web Apps サーバー 通信の保護](plan-office-web-apps-server.md)」で説明しているように、サーバーに証明書をインストールしておく必要があります。
 
@@ -299,6 +300,7 @@ default="true" ext="xls"/><action name="view"
   - [Lync Server 2013 と Office Web Apps サーバーの統合の構成](https://go.microsoft.com/fwlink/p/?linkid=256902)
 
 ## HTTPS を使用する負荷分散された複数サーバー Office Web Apps サーバー ファームの展開
+<a name="multihttps"> </a>
 
 Office Web Apps サーバー ファームに多数のトラフィックを見込み、内部ネットワークだけではなくインターネット上でも利用できるようにしたい場合、このタイプのトポロジーがぴったりです。 このセクションは、複数のサーバー ロード バランサーを HTTPS を使用する Office Web Apps サーバー ファームをインストールする方法を示しています。興味があれば、[このトポロジーについて読んでみてください](plan-office-web-apps-server.md)。
 
