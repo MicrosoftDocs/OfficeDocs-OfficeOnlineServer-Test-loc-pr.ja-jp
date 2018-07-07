@@ -102,7 +102,7 @@ Outlook Web App についての情報をお探しの IT 担当者の方 は、�
 <li><p>SharePoint 2013 と共用するために Office Web Apps サーバーを展開する場合は、<a href="plan-office-web-apps-used-with-sharepoint-2013.md">SharePoint 2013 で使用するときに Office Web Appsを計画します</a>.</p></li>
 <li><p>Office Web Apps 用の<a href="https://technet.microsoft.com/ja-jp/library/cc263526(v=office.15)">ブラウザーのサポート</a>は、SharePoint 2013 用と同じです。</p></li>
 <li><p>Office Web Apps は <a href="plan-office-web-apps-used-with-sharepoint-2013.md">クレーム ベース認証</a>SharePoint 2013 を使用する Web アプリケーションによってのみ使用できます。</p></li>
-<li><p>Office Web Apps でのファイル表示は無料ですが、Office Web Apps サーバー を内部設置型で SharePoint 2013 と共用するときに、<a href="new-officewebappsfarm.md">Office Web Apps の編集を有効にする</a>場合は、<a href="plan-office-web-apps-used-with-sharepoint-2013.md">編集ライセンスを購入する</a>必要があります。</p></li>
+<li><p>Office Web Apps でのファイル表示は無料ですが、Office Web Apps サーバー を内部設置型で SharePoint 2013 と共用するときに、<a href="https://docs.microsoft.com/en-us/powershell/module/officewebapps/new-officewebappsfarm?view=officewebapps-ps">Office Web Apps の編集を有効にする</a>場合は、<a href="plan-office-web-apps-used-with-sharepoint-2013.md">編集ライセンスを購入する</a>必要があります。</p></li>
 </ul>
 <p><br />
 </p>
@@ -134,7 +134,7 @@ Outlook Web App についての情報をお探しの IT 担当者の方 は、�
 <td><p>まず <a href="deploy-office-web-apps-server.md">Office Web Apps サーバーを実行するサーバーを準備します</a>。次に <a href="deploy-office-web-apps-server.md">Office Web Apps サーバーをインストールします</a>。そして最新の Office Web Apps サーバー 更新プログラムを適用します。その後<a href="deploy-office-web-apps-server.md">Office Web アプリケーション サーバーに言語パックをインストールします</a>。</p>
 <p><br />
 </p>
-<p>Office Web Apps サーバー の機能を評価するには、<a href="deploy-office-web-apps-server.md">単一サーバーの Office Web Apps サーバー ファームをテスト環境で展開します</a>。あるいは、展開をより安全なものにするには、<a href="e4d51dc4-6460-437d-aa8e-0ae4d3aa8cc5(office.15)#singlehttps">HTTPS を使用する単一サーバー Office Web Apps Server ファームの展開</a>も可能です。 多くのユーザーのサポートが必要な場合は、<a href="e4d51dc4-6460-437d-aa8e-0ae4d3aa8cc5(office.15)#multihttps">HTTPS を使用する負荷分散された複数サーバー Office Web Apps Server ファームの展開</a>もできます。</p>
+<p>Office Web Apps サーバー の機能を評価するには、<a href="deploy-office-web-apps-server.md">単一サーバーの Office Web Apps サーバー ファームをテスト環境で展開します</a>。あるいは、展開をより安全なものにするには、<a href="deploy-office-web-apps-server.md#singlehttps">HTTPS を使用する単一サーバー Office Web Apps Server ファームの展開</a>も可能です。 多くのユーザーのサポートが必要な場合は、<a href="deploy-office-web-apps-server.md#multihttps">HTTPS を使用する負荷分散された複数サーバー Office Web Apps Server ファームの展開</a>もできます。</p>
 <p><br />
 </p>
 <p>Office Web Apps サーバー を展開した後は、ホストを構成する必要があります。Office Web Apps サーバー を使用するには、「<a href="configure-office-web-apps-for-sharepoint-2013.md">SharePoint 2013 の構成</a>」、「<a href="http://go.microsoft.com/fwlink/p/?linkid=256611">Exchange Server 2013 の構成</a>」および 「<a href="http://go.microsoft.com/fwlink/p/?linkid=256902">Lync Server 2013 の構成</a>」を参照してください。.</p>
@@ -165,10 +165,10 @@ Outlook Web App についての情報をお探しの IT 担当者の方 は、�
 <p>SharePoint 2013 と共用するためにOffice Web Apps サーバー を展開した場合、既定では、 Office ドキュメントはブラウザーで開かれます。しかし、<a href="set-the-default-open-behavior-for-browser-enabled-documents-office-web-apps-when-used-with-sharepoint-2013.md">この動作を変更してクライアントで Office ドキュメントを開くこと</a>ができます。</p>
 <p><br />
 </p>
-<p>組織において、ブラウザーでワークブックを表示するために Excel Web App ではなく Excel Servicesを使用することにした場合、 Excel ワークブックの Excel Web App を Windows PowerShell コマンドレット<a href="new-spwopisuppressionsetting.md">New-SPWOPISuppressionSetting</a> を使用してオフにすることができます。</p>
+<p>組織において、ブラウザーでワークブックを表示するために Excel Web App ではなく Excel Servicesを使用することにした場合、 Excel ワークブックの Excel Web App を Windows PowerShell コマンドレット<a href="https://docs.microsoft.com/en-us/powershell/module/sharepoint-server/New-SPWOPISuppressionSetting?view=sharepoint-ps">New-SPWOPISuppressionSetting</a> を使用してオフにすることができます。</p>
 <p><br />
 </p>
-<p><a href="configure-office-web-apps-for-sharepoint-2013.md">Office Web Apps サーバーから SharePoint 2013 を切断</a>したい場合は、 Windows PowerShell コマンドレット <a href="remove-spwopibinding.md">Remove-SPWOPIBinding</a> を使用します。</p></td>
+<p><a href="configure-office-web-apps-for-sharepoint-2013.md">Office Web Apps サーバーから SharePoint 2013 を切断</a>したい場合は、 Windows PowerShell コマンドレット <a href="https://docs.microsoft.com/en-us/powershell/module/sharepoint-server/Remove-SPWOPIBinding?view=sharepoint-ps">Remove-SPWOPIBinding</a> を使用します。</p></td>
 </tr>
 <tr class="even">
 <td><img src="images/Dn135237.17bfbe9e-7e0e-48dd-887b-b94f8d8f9f22(Office.15).png" title="トラブシューティング アイコン" alt="トラブシューティング アイコン" /></td>
@@ -183,13 +183,13 @@ Outlook Web App についての情報をお探しの IT 担当者の方 は、�
 </p>
 <p>Office Web Apps サーバー</p>
 <ul>
-<li><p><a href="windows-powershell-for-office-web-apps-server.md">Office Web Apps サーバーで使用できる Windows PowerShell</a></p></li>
+<li><p><a href="https://docs.microsoft.com/en-us/powershell/module/officewebapps/?view=officewebapps-ps">Office Web Apps サーバーで使用できる Windows PowerShell</a></p></li>
 </ul>
 <p><br />
 </p>
 <p>SharePoint 2013</p>
 <ul>
-<li><p><a href="windows-powershell-for-office-web-apps-sharepoint-2013.md">Office Web Apps で使用できる Windows PowerShell (SharePoint 2013)</a></p></li>
+<li><p><a href="https://docs.microsoft.com/en-us/powershell/module/sharepoint-server/?view=sharepoint-ps">Office Web Apps で使用できる Windows PowerShell (SharePoint 2013)</a></p></li>
 </ul></td>
 </tr>
 <tr class="even">

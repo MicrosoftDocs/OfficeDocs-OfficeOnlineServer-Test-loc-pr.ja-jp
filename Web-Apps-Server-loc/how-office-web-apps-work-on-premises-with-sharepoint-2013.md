@@ -46,7 +46,7 @@ Office Web Apps ライセンスには以下の 2 つのオプションがあり�
 
 SharePoint 2013 では、Office Web Apps を使用するための新しいライセンス契約が提供されます。SharePoint ライセンスを有効にしてから Office Web Apps の編集を有効にすると、適切なライセンスを持つユーザーのみがブラウザーで実際に Office ファイルを編集できます。Office Web Apps の編集ライセンスがユーザーに適用されない場合は、表示しかサポートされません。
 
-SharePoint 2013 でのライセンスのしくみの詳細については、「[ライセンスを構成する (SharePoint Server 2013)](https://technet.microsoft.com/ja-jp/library/jj219627\(v=office.15\))」を参照してください。 編集を有効にする EditingEnabled パラメーターについては、「[New-OfficeWebAppsFarm](new-officewebappsfarm.md) 」および「[Set-OfficeWebAppsFarm](set-officewebappsfarm.md)」を参照してください。
+SharePoint 2013 でのライセンスのしくみの詳細については、「[ライセンスを構成する (SharePoint Server 2013)](https://technet.microsoft.com/ja-jp/library/jj219627\(v=office.15\))」を参照してください。 編集を有効にする EditingEnabled パラメーターについては、「[New-OfficeWebAppsFarm](https://docs.microsoft.com/en-us/powershell/module/officewebapps/new-officewebappsfarm?view=officewebapps-ps) 」および「[Set-OfficeWebAppsFarm](https://docs.microsoft.com/en-us/powershell/module/officewebapps/set-officewebappsfarm?view=officewebapps-ps)」を参照してください。
 
 SharePoint 2013 のリンク機能で送信されるファイルは、編集ライセンスがない場合や、Office Web Apps サーバー ファームで編集が無効になっている場合でも、Office Web Apps で編集できます。
 
@@ -54,7 +54,7 @@ SharePoint 2013 のリンク機能で送信されるファイルは、編集ラ�
 
 Office Web Apps サーバー が Office Mobile Viewer を提供することで、SharePoint Server サイトにアクセスするモバイル ユーザーは Office Web Apps を利用できるようになります。既定では Office Mobile Viewer は有効になっていますが、SharePoint Server のサイト管理者によって無効にすることができます。有効であるとき、ユーザーは、モバイル デバイスのブラウザーで SharePoint Server サイトに移動でき、 SharePoint Server ライブラリで開きたいドキュメントをタップすると、そのドキュメントはモバイル ブラウザーで開きます。
 
-モバイル デバイスの SharePoint ライブラリについての詳細は、「[What's new for mobile devices in SharePoint 2013](https://technet.microsoft.com/ja-jp/library/fp161352\(v=office.15\))」および「[モバイル デバイスと SharePoint Server 2013 の概要](https://technet.microsoft.com/ja-jp/library/fp161351\(v=office.15\))」を参照してください。モバイル デバイスでの Office Mobile Viewer の使用方法の詳細は、「[Android、iPhone、または Windows Phone で Office Web Apps を使う](http://go.microsoft.com/fwlink/p/?linkid=271045)」を参照してください。SharePoint 2013 の Office Mobile Viewer を無効にするには、[Remove-SPWOPIBinding](remove-spwopibinding.md) コマンドレットを使用します。
+モバイル デバイスの SharePoint ライブラリについての詳細は、「[What's new for mobile devices in SharePoint 2013](https://technet.microsoft.com/ja-jp/library/fp161352\(v=office.15\))」および「[モバイル デバイスと SharePoint Server 2013 の概要](https://technet.microsoft.com/ja-jp/library/fp161351\(v=office.15\))」を参照してください。モバイル デバイスでの Office Mobile Viewer の使用方法の詳細は、「[Android、iPhone、または Windows Phone で Office Web Apps を使う](http://go.microsoft.com/fwlink/p/?linkid=271045)」を参照してください。SharePoint 2013 の Office Mobile Viewer を無効にするには、[Remove-SPWOPIBinding](https://docs.microsoft.com/en-us/powershell/module/sharepoint-server/Remove-SPWOPIBinding?view=sharepoint-ps) コマンドレットを使用します。
 
 ## SharePoint での Excel Web App と Excel Services の相違点
 
@@ -64,7 +64,7 @@ SharePoint の Excel Web App と Excel Services には明らかな違いがあ�
 
 Excel Web App と Excel Servicesの相違点に関する詳細は、「[SharePoint Server 2013 の Excel Services の概要](https://technet.microsoft.com/ja-jp/library/ee424405\(v=office.15\))」および 「[SharePoint の Excel Services と Excel Web App の比較](http://go.microsoft.com/fwlink/p/?linkid=255460)」を参照してください。
 
-組織において、ブラウザーでブックを表示するために Excel Web Appではなく Excel Servicesの使用することにした場合、Windows PowerShell の **New-SPWOPISuppressionSettings** コマンドレットを使用して、Excel ブックに対して Excel Web App をオフにすることができます。詳細については、「[New-SPWOPISuppressionSetting](new-spwopisuppressionsetting.md)」を参照してください。
+組織において、ブラウザーでブックを表示するために Excel Web Appではなく Excel Servicesの使用することにした場合、Windows PowerShell の **New-SPWOPISuppressionSettings** コマンドレットを使用して、Excel ブックに対して Excel Web App をオフにすることができます。詳細については、「[New-SPWOPISuppressionSetting](https://docs.microsoft.com/en-us/powershell/module/sharepoint-server/New-SPWOPISuppressionSetting?view=sharepoint-ps)」を参照してください。
 
 ## 関連項目
 

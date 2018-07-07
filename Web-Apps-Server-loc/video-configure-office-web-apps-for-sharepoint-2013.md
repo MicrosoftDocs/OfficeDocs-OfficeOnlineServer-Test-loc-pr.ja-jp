@@ -32,15 +32,15 @@ SharePoint 2013 用の Office Web Apps の構成はとても簡単なプロセ�
 
 1\. Windows PowerShell コマンド プロンプトを開き、Office Web Apps サーバー に必要な役割およびサービスをインストールします。「[Office Web Apps Server を実行するサーバーの準備](deploy-office-web-apps-server.md)」を参照してください。必要な役割およびサービスが見つからないとOffice Web Apps サーバー はインストールできないため、この手順が必要です。  
 2\. [マイクロソフト ボリューム ライセンス サービス センター (VLSC)](http://go.microsoft.com/fwlink/p/?linkid=256561)から Office Web Apps サーバー ソフトウェアをインストールします。Office Web Apps サーバー をダウンロードするには、Office Professional Plus 2013、Office Standard 2013、または Office for Mac 2011 のボリューム ライセンス契約が必要です。ダウンロード ファイルは、VLSC ポータルにおいてそれらの Office 製品の下にあります。  
-3\. [New-OfficeWebAppsFarm](new-officewebappsfarm.md) を使用して Office Web Apps サーバー ファームを作成します。  
+3\. [New-OfficeWebAppsFarm](https://docs.microsoft.com/en-us/powershell/module/officewebapps/new-officewebappsfarm?view=officewebapps-ps) を使用して Office Web Apps サーバー ファームを作成します。  
 4\. ブラウザー ウィンドウを開いて http://*ServerName*/hosting/discovery に移動し、Office Web Apps サーバー が正常に作成されたことを確認します。
 
 **SharePoint 2013 を実行するサーバー上について、ビデオは次の方法を示します。**
 
 5\. SharePoint 2013 管理シェル を開きます。  
-6\. [New-SPWOPIBinding](new-spwopibinding.md) を使用して、Office Web Apps サーバー と SharePoint 2013 の間のバインディングを作成します。これにより、 SharePoint 2013 を実行するサーバーと Office Web Apps サーバー を実行するサーバー間のコミュニケーションを設定します。  
-7\. [Get-SPWOPIZone](get-spwopizone.md) を使用して、SharePoint 2013 の WOPI ゾーンを表示します。この設定では、2 つのサーバーが異なる WOPI ゾーンを使用していることが明確になります。つまり、SharePoint 2013 は internal-https、Office Web Apps サーバー は internal-http を使用します。正常に動作するために、ゾーンは Office Web Apps に合う必要があります。  
-8\. [Set-SPWOPIZone](set-spwopizone.md) を使用して、SharePoint 2013 用に WOPI ゾーンを internal-http に変更します。  
+6\. [New-SPWOPIBinding](https://docs.microsoft.com/en-us/powershell/module/sharepoint-server/New-SPWOPIBinding?view=sharepoint-ps) を使用して、Office Web Apps サーバー と SharePoint 2013 の間のバインディングを作成します。これにより、 SharePoint 2013 を実行するサーバーと Office Web Apps サーバー を実行するサーバー間のコミュニケーションを設定します。  
+7\. [Get-SPWOPIZone](https://docs.microsoft.com/en-us/powershell/module/sharepoint-server/Get-SPWOPIZone?view=sharepoint-ps) を使用して、SharePoint 2013 の WOPI ゾーンを表示します。この設定では、2 つのサーバーが異なる WOPI ゾーンを使用していることが明確になります。つまり、SharePoint 2013 は internal-https、Office Web Apps サーバー は internal-http を使用します。正常に動作するために、ゾーンは Office Web Apps に合う必要があります。  
+8\. [Set-SPWOPIZone](https://docs.microsoft.com/en-us/powershell/module/sharepoint-server/Set-SPWOPIZone?view=sharepoint-ps) を使用して、SharePoint 2013 用に WOPI ゾーンを internal-http に変更します。  
 9\. Office ドキュメントを SharePoint 2013 ドキュメント ライブラリで開いて、Office Web Apps が動作していることを確認します。
 
 これらの各手順についての詳細は、「[Office Web Apps サーバーの展開](deploy-office-web-apps-server.md)」および「[SharePoint 2013 の Office Web アプリケーションを構成します。](configure-office-web-apps-for-sharepoint-2013.md)」の記事の中にある次のセクションを参照してください。
