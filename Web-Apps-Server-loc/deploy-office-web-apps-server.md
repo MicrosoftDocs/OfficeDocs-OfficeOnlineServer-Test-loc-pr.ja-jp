@@ -1,4 +1,4 @@
-﻿---
+---
 title: Office Web Apps サーバーの展開
 TOCTitle: Office Web Apps サーバーの展開
 ms:assetid: e4d51dc4-6460-437d-aa8e-0ae4d3aa8cc5
@@ -369,9 +369,12 @@ NET Framework 3.5 の機能がインストールされてから削除された�
 
 **Windows Server 2008 R2 の場合**
 
+```
     %systemroot%\Microsoft.NET\Framework64\v4.0.30319\aspnet_regiis.exe -iru
-
+```
+```
     iisreset /restart /noforce
+```
 
 **Windows Server 2012 または Windows Server 2012 R2 の場合**
 
