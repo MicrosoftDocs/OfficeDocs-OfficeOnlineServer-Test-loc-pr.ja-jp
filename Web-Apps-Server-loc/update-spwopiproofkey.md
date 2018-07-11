@@ -9,19 +9,21 @@ mtps_version: v=office.15
 ms.translationtype: HT
 ---
 
-# Update-SPWOPIProofKey
+# Update-SPWOPIProofKey 
 
- 
+_**適用先:** Office Web Apps, SharePoint Foundation 2013, SharePoint Server 2013_
 
-_**適用先:**Office Web Apps, SharePoint Foundation 2013, SharePoint Server 2013_
-
-_**トピックの最終更新日:**2015-03-09_
+_**トピックの最終更新日:** 2015-03-09_
 
 このコマンドレットが実行されている現在の SharePoint ファームで、WOPI アプリケーションへの接続に使用する公開キーを更新します。
 
 ## 構文
 
-    Update-SPWOPIProofKey [-AssignmentCollection <SPAssignmentCollection>] [-ServerName <String>]
+```PowerShell
+       Update-SPWOPIProofKey 
+  [-AssignmentCollection <SPAssignmentCollection>] 
+  [-ServerName <String>]
+```
 
 ## 解説
 
@@ -53,13 +55,11 @@ SharePoint 管理シェル
 <td><p>省略可</p></td>
 <td><p>Microsoft.SharePoint.PowerShell.SPAssignmentCollection</p></td>
 <td><p>適切な破棄を行うためにオブジェクトを管理します。<strong>SPWeb</strong> や <strong>SPSite</strong> などのオブジェクトの使用によって大量のメモリが使用される場合があるので、Windows PowerShell スクリプトでこれらのオブジェクトを使用するには適切なメモリ管理が必要です。メモリの解放が必要になった場合は、<strong>SPAssignment</strong> オブジェクトを使用して、変数へのオブジェクトの割り当てとオブジェクトの破棄を行うことができます。割り当てコレクションまたは <strong>Global</strong> パラメーターが使用されない場合、<strong>SPWeb</strong>、<strong>SPSite</strong>、または <strong>SPSiteAdministration</strong> オブジェクトが使用されると、オブジェクトは自動的に破棄されます。</p>
-<div class="alert">
 
 > [!NOTE]
 > <STRONG>Global</STRONG> パラメーターが使用されている場合は、オブジェクトはすべてグローバル ストアに格納されます。<STRONG>Stop-SPAssignment</STRONG> コマンドを使用してオブジェクトの使用または破棄を直接行わないと、メモリ不足のシナリオになる場合があります。
 
-
-</div></td>
+</td>
 </tr>
 <tr class="even">
 <td><p><strong>ServerName</strong></p></td>
@@ -79,7 +79,9 @@ SharePoint 管理シェル
 
 \-------------- 例 -----------------
 
+```PowerShell
     Update-SPWOPIProofKey -ServerName "Server.corp.Contoso.com"
+```
 
 この例では、WOPI アプリケーション (Office Web Apps サーバー が実行されているサーバーなど) から現在の公開キーを取得し、SharePoint ファームに格納されているキーを更新します。
 
