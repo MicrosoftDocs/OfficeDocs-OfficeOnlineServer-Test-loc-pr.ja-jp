@@ -13,9 +13,9 @@ ms.translationtype: HT
 
  
 
-_**適用先:**Office Web Apps Server_
+_**適用先:** Office Web Apps Server_
 
-_**トピックの最終更新日:**2017-10-05_
+_**トピックの最終更新日:** 2017-10-05_
 
 **概要:** SharePoint 2013 および Lync Server 2013 で使用するため、オンプレミスの Office Web Apps サーバーを展開する方法を説明します。
 
@@ -85,11 +85,15 @@ Windows Server 2008 R2、Windows Server 2012、および Windows Server 2012 R2 
 
 2.  管理者として Windows PowerShell プロンプトを開き、次のコマンド例を実行して必要な役割とサービスをインストールします。
     
+    ```PowerShell
         Import-Module ServerManager
+    ```
     
     次に、次のコマンドを実行します。
     
+    ```PowerShell
         Add-WindowsFeature Web-Server,Web-WebServer,Web-Common-Http,Web-Static-Content,Web-App-Dev,Web-Asp-Net,Web-Net-Ext,Web-ISAPI-Ext,Web-ISAPI-Filter,Web-Includes,Web-Security,Web-Windows-Auth,Web-Filtering,Web-Stat-Compression,Web-Dyn-Compression,Web-Mgmt-Console,Ink-Handwriting,IH-Ink-Support,NET-Framework,NET-Framework-Core,NET-HTTP-Activation,NET-Non-HTTP-Activ,NET-Win-CFAC
+    ```
     
     メッセージが表示されたら、サーバーを再起動します。
 
@@ -97,7 +101,9 @@ Windows Server 2008 R2、Windows Server 2012、および Windows Server 2012 R2 
 
 1.  Windows PowerShell プロンプトを管理者として開き、このコマンドを実行して必要な役割とサービスをインストールします。
     
+    ```PowerShell
         Add-WindowsFeature Web-Server,Web-Mgmt-Tools,Web-Mgmt-Console,Web-WebServer,Web-Common-Http,Web-Default-Doc,Web-Static-Content,Web-Performance,Web-Stat-Compression,Web-Dyn-Compression,Web-Security,Web-Filtering,Web-Windows-Auth,Web-App-Dev,Web-Net-Ext45,Web-Asp-Net45,Web-ISAPI-Ext,Web-ISAPI-Filter,Web-Includes,InkandHandwritingServices,NET-Framework-Features,NET-Framework-Core,NET-HTTP-Activation,NET-Non-HTTP-Activ,NET-WCF-HTTP-Activation45
+    ```
     
     メッセージが表示されたら、サーバーを再起動します。
 
@@ -109,7 +115,9 @@ Windows Server 2008 R2、Windows Server 2012、および Windows Server 2012 R2 
 
 2.  Windows PowerShell プロンプトを管理者として開き、このコマンドを実行して必要な役割とサービスをインストールします。
     
+    ```PowerShell
         Add-WindowsFeature Web-Server,Web-Mgmt-Tools,Web-Mgmt-Console,Web-WebServer,Web-Common-Http,Web-Default-Doc,Web-Static-Content,Web-Performance,Web-Stat-Compression,Web-Dyn-Compression,Web-Security,Web-Filtering,Web-Windows-Auth,Web-App-Dev,Web-Net-Ext45,Web-Asp-Net45,Web-ISAPI-Ext,Web-ISAPI-Filter,Web-Includes,InkandHandwritingServices,NET-Framework-Features,NET-Framework-Core,NET-HTTP-Activation,NET-Non-HTTP-Activ,NET-WCF-HTTP-Activation45
+    ```
     
     メッセージが表示されたら、サーバーを再起動します。
 
@@ -198,7 +206,9 @@ Office Web Apps サーバー を展開するだけであれば、Office Web Apps
 
 **New-OfficeWebAppsFarm** コマンドを使用して、次の例のような単一サーバーで構成される新しい Office Web Apps サーバー ファームを作成します。
 
+```PowerShell
     New-OfficeWebAppsFarm -InternalURL "http://servername" -AllowHttp -EditingEnabled
+```
 
 **パラメーター**
 
@@ -216,10 +226,13 @@ Office Web Apps サーバー を展開するだけであれば、Office Web Apps
 
 ファームが作成されると、ファームの詳細が Windows PowerShell プロンプトに表示されます。 Office Web Apps サーバー が正しくインストールされて構成されたことを確認するには、以下の例のように、Web ブラウザーを使用して Office Web Apps サーバー の検出 URL にアクセスします。検出 URL は、Office Web Apps サーバー ファームを構成するときに指定した*InternalUrl* パラメーターと、その後ろに**/hosting/discovery** を付けたもので構成されます。例:
 
+```
     http://servername/hosting/discovery
+```
 
 Office Web Apps サーバー が予期されるとおりに動作する場合は、Web ブラウザーに Web アプリ オープン プラットフォーム インターフェイス (WOPI) の検出 XML ファイルが表示されます。このファイルの先頭部分は以下のようになります。
 
+```XML
     <?xml version="1.0" encoding="utf-8" ?> 
     - <wopi-discovery>
     - <net-zone name="internal-http">
@@ -227,7 +240,8 @@ Office Web Apps サーバー が予期されるとおりに動作する場合は
     <action name="view" ext="ods" default="true" urlsrc="http://servername/x/_layouts/xlviewerinternal.aspx?<ui=UI_LLCC&><rs=DC_LLCC&>" /> 
     <action name="view" ext="xls" default="true" urlsrc="http://servername/x/_layouts/xlviewerinternal.aspx?<ui=UI_LLCC&><rs=DC_LLCC&>" /> 
     <action name="view" ext="xlsb" default="true" urlsrc="http://servername/x/_layouts/xlviewerinternal.aspx?<ui=UI_LLCC&><rs=DC_LLCC&>" /> 
-    <action name="view" ext="xlsm" default="true" urlsrc="http://servername/x/_layouts/xlviewerinternal.aspx?<ui=UI_LLCC&><rs=DC_LLCC&>" /> 
+    <action name="view" ext="xlsm" default="true" urlsrc="http://servername/x/_layouts/xlviewerinternal.aspx?<ui=UI_LLCC&><rs=DC_LLCC&>" />
+``` 
 
 ## 手順 3: ホストを構成する
 
@@ -248,7 +262,9 @@ Office Web Apps サーバー が予期されるとおりに動作する場合は
 
 **New-OfficeWebAppsFarm** コマンドを使用して、次の例のような単一サーバーで構成される新しい Office Web Apps サーバー ファームを作成します。
 
+```PowerShell
     New-OfficeWebAppsFarm -InternalUrl "https://server.contoso.com" -ExternalUrl "https://wacweb01.contoso.com" -CertificateName "OfficeWebApps Certificate" -EditingEnabled
+```
 
 **パラメーター**
 
@@ -268,11 +284,13 @@ Office Web Apps サーバー が予期されるとおりに動作する場合は
 
 ファームが作成されると、ファームの詳細が Windows PowerShell プロンプトに表示されます。 Office Web Apps サーバー が正しくインストールされて構成されたことを確認するには、以下の例のように、Web ブラウザーを使用して Office Web Apps サーバー の検出 URL にアクセスします。検出 URL は、Office Web Apps サーバー ファームを構成するときに指定した*InternalUrl* パラメーターと、その後ろに**/hosting/discovery** を付けたもので構成されます。例:
 
+```
     https://server.contoso.com/hosting/discovery
+```
 
 Office Web Apps サーバーが予期されるとおりに動作する場合は、Web ブラウザーに Web アプリ オープン プラットフォーム インターフェイス (WOPI) の検出 XML ファイルが表示されます。このファイルの先頭部分は以下のようになります。
 
-``` 
+```XML 
 <?xml version="1.0" encoding="UTF-8"?>
 <wopi-discovery><net-zone 
 name="internal-https"><app name="Excel" checkLicense="true" 
@@ -281,14 +299,11 @@ name="view"
 urlsrc="https://wac.contoso.com/x/_layouts/xlviewerinternal.aspx?<ui=UI_LLCC&><rs=DC_LLCC&>" 
 default="true" ext="ods"/><action name="view" 
 urlsrc="https://wac.contoso.com/x/_layouts/xlviewerinternal.aspx?<ui=UI_LLCC&><rs=DC_LLCC&>" 
-default="true" ext="xls"/><action name="view"
- 
+default="true" ext="xls"/><action name="view" 
 ```
-
 
 > [!NOTE]
 > Web ブラウザーの設定によって設定によっては、検出 XML ファイルのコンテンツが表示される前に、<STRONG>すべてのコンテンツを表示</STRONG> を選択することを求めるメッセージが表示されることがあります。
-
 
 
 ## 手順 3: ホストを構成する
@@ -314,7 +329,9 @@ Office Web Apps サーバー ファームに多数のトラフィックを見込
 
 **New-OfficeWebAppsFarm** コマンドを使用して、 、次の例のような最初のサーバーで新しい Office Web Apps サーバー ファームを作成します。
 
+```PowerShell
     New-OfficeWebAppsFarm -InternalUrl "https://server.contoso.com" -ExternalUrl "https://wacweb01.contoso.com" -SSLOffloaded -EditingEnabled
+```
 
 **パラメーター**
 
@@ -334,7 +351,9 @@ Office Web Apps サーバー ファームに多数のトラフィックを見込
 
 最初のサーバーが Office Web Apps サーバー を実行し始めたら、Office Web Apps サーバー ファームに追加する各サーバーで **New-OfficeWebAppsMachine** コマンドを実行します。 **–MachineToJoin**パラメーターで、 Office Web Apps サーバー ファームに既に存在するサーバーの コンピューター名を使用してください。たとえば、server1.contoso.com がファーム内に既にある場合は、次のように使用します。
 
+```PowerShell
     New-OfficeWebAppsMachine -MachineToJoin "server1.contoso.com"
+```
 
 これらのパラメーターの詳細については、「[New-OfficeWebAppsMachine](https://docs.microsoft.com/en-us/powershell/module/officewebapps/new-officewebappsmachine?view=officewebapps-ps)」を参照してください。
 
@@ -342,18 +361,19 @@ Office Web Apps サーバー ファームに多数のトラフィックを見込
 
 ファームが作成されると、ファームの詳細が Windows PowerShell プロンプトに表示されます。 Office Web Apps サーバー が正しくインストールされて構成されたことを確認するには、以下の例のように、Web ブラウザーを使用して Office Web Apps サーバー の検出 URL にアクセスします。検出 URL は、Office Web Apps サーバー ファームを構成するときに指定した *InternalUrl* パラメーターと、その後ろに**/hosting/discovery** を付けたもので構成されます。例:
 
+```
     https://server.contoso.com/hosting/discovery
+```
 
 Office Web Apps サーバー が予期されるとおりに動作する場合は、Web ブラウザーに Web アプリ オープン プラットフォーム インターフェイス (WOPI) の検出 XML ファイルが表示されます。このファイルの先頭部分は以下のようになります。
 
+```XML
     <?xml version="1.0" encoding="UTF-8"?>
     <wopi-discovery><net-zone name="internal-https"><app name="Excel" checkLicense="true" favIconUrl="https://officewebapps.contoso.com/x/_layouts/images/FavIcon_Excel.ico"><action name="view" urlsrc="https://officewebapps.contoso.com/x/_layouts/xlviewerinternal.aspx?<ui=UI_LLCC&><rs=DC_LLCC&>" default="true" ext="ods"/><action name="view" urlsrc="https://officewebapps.contoso.com/x/_layouts/xlviewerinternal.aspx?<ui=UI_LLCC&><rs=DC_LLCC&>" default="true" ext="xls"/><action name="view" urlsrc="https://officewebapps.contoso.com/x/_layouts/xlviewerinternal.aspx?<ui=UI_LLCC&><rs=DC_LLCC&>" default="true" ext="xlsb"/> 
-
+```
 
 > [!NOTE]
 > Web ブラウザーの設定によっては、検出 XML ファイルのコンテンツが表示される前に、[<STRONG>すべてのコンテンツを表示</STRONG>] を選択することを求めるメッセージが表示されることがあります。
-
-
 
 ## 手順 4: ホストを構成する
 
@@ -369,16 +389,17 @@ NET Framework 3.5 の機能がインストールされてから削除された�
 
 **Windows Server 2008 R2 の場合**
 
-```
+```PowerShell
     %systemroot%\Microsoft.NET\Framework64\v4.0.30319\aspnet_regiis.exe -iru
-```
-```
+
     iisreset /restart /noforce
 ```
 
 **Windows Server 2012 または Windows Server 2012 R2 の場合**
 
+```
     dism /online /enable-feature /featurename:IIS-ASPNET45
+```
 
 ## 関連項目
 

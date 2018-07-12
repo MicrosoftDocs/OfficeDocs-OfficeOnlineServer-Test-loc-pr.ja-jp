@@ -13,9 +13,9 @@ ms.translationtype: HT
 
  
 
-_**適用先:**Office Web Apps, SharePoint Foundation 2013, SharePoint Server 2013_
+_**適用先:** Office Web Apps, SharePoint Foundation 2013, SharePoint Server 2013_
 
-_**トピックの最終更新日:**2016-12-16_
+_**トピックの最終更新日:** 2016-12-16_
 
 **概要:** SharePoint サイト コレクションと SharePoint ドキュメント ライブラリで Office ドキュメントを表示する既定の方法を構成する方法について説明します。
 
@@ -107,23 +107,33 @@ SharePoint 2013 の OpenInClient 機能を設定するには、次の手順の�
     
       - 特定のサイト コレクションに対して OpenInClient 機能を有効にする (ドキュメントをクライアント アプリケーションで開くため) には、次のコマンドを入力します。
         
+        ```PowerShell
             Enable-SPFeature 8A4B8DE2-6FD8-41e9-923C-C7C3C00F8295 -url <SiteCollURL>
-        
+        ```
+        ```  
         ここで、*\<SiteCollURL\>* は、サイト コレクションの URL です。
+        ```
     
       - すべてのサイト コレクションに対して OpenInClient 機能を有効にする (ドキュメントをクライアント アプリケーションで開くため) には、次のコマンドを入力します。
-        
+
+        ```PowerShell  
             Get-SPSite -limit ALL |foreach{ Enable-SPFeature 8A4B8DE2-6FD8-41e9-923C-C7C3C00F8295 -url $_.URL }
+        ```
     
       - 特定のサイト コレクションに対して OpenInClient 機能を無効にする (ドキュメントをブラウザーで開くため) には、次のコマンドを入力します。
         
+        ```PowerShell 
             Disable-SPFeature 8A4B8DE2-6FD8-41e9-923C-C7C3C00F8295 -url <SiteCollURL>
-        
+        ``` 
+        ```       
         ここで、*\<SiteCollURL\>* は、サイト コレクションの URL です。
+        ```
     
       - すべてのサイト コレクションに対して OpenInClient 機能を無効にする (ドキュメントをブラウザーで開くため) には、次のコマンドを入力します。
-        
+
+        ```PowerShell   
             Get-SPSite -limit ALL |foreach{ Disable-SPFeature 8A4B8DE2-6FD8-41e9-923C-C7C3C00F8295 -url $_.URL }
+        ```
 
  **ドキュメント ライブラリ設定ページを使用してドキュメント ライブラリを表示する既定の方法を設定する**
 
@@ -183,7 +193,9 @@ SharePoint 2013 の OpenInClient 機能を設定するには、次の手順の�
 
 3.  Windows PowerShell コマンド プロンプトで、次のコマンドを入力します。
     
+      ```PowerShell
         Get-SPWeb -site <SiteCollURL> | % {$_.Lists} | where {$_.IrmEnabled -eq $true} | % {$_.DefaultItemOpen =[Microsoft.Sharepoint.DefaultItemOpen]::<DefaultItemOpenSetting>; $_.Update()}
+      ```
     
     各部分の意味は次のとおりです。
     
