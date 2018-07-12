@@ -13,9 +13,9 @@ ms.translationtype: HT
 
  
 
-_**適用先:** Office Web Apps Server_
+_<strong>適用先:</strong>Office Web Apps Server_
 
-_**トピックの最終更新日:** 2017-10-10_
+_<strong>トピックの最終更新日:</strong>2017-10-10_
 
 **概要:** HTTPS、証明書、仮想化、負荷分散、トポロジ、セキュリティなど、Office Web Apps Serverの要件と前提条件について説明します。
 

@@ -13,11 +13,11 @@ ms.translationtype: HT
 
  
 
-_**適用先:**Office Web Apps, SharePoint Foundation 2013, SharePoint Server 2013_
+_<strong>適用先:</strong>Office Web Apps, SharePoint Foundation 2013, SharePoint Server 2013_
 
-_**トピックの最終更新日:**2016-12-16_
+_<strong>トピックの最終更新日:</strong>2016-12-16_
 
-**概要:** Office Web Apps、Office Web Apps サーバー、およびそれらの内部設置型における SharePoint 2013 との連動方法について説明します。
+**概要:**Office Web Apps、Office Web Apps サーバー、およびそれらの内部設置型における SharePoint 2013 との連動方法について説明します。
 
 **対象ユーザー:** IT 担当者
 

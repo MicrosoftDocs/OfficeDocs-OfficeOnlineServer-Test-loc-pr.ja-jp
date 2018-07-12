@@ -13,9 +13,9 @@ ms.translationtype: HT
 
  
 
-_**適用先:**Office Web Apps, SharePoint Foundation 2013, SharePoint Server 2013_
+_<strong>適用先:</strong>Office Web Apps, SharePoint Foundation 2013, SharePoint Server 2013_
 
-_**トピックの最終更新日:**2017-05-26_
+_<strong>トピックの最終更新日:</strong>2017-05-26_
 
 **概要:** 内部設置型 SharePoint 2013 用の Office Web Apps の展開および構成方法について説明する記事が含まれています。
 
