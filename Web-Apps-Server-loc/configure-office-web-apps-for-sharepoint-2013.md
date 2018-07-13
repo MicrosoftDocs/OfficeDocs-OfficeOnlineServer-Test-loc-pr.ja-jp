@@ -1,4 +1,4 @@
-﻿---
+---
 title: SharePoint 2013 の Office Web アプリケーションを構成します。
 TOCTitle: SharePoint 2013 の Office Web アプリケーションを構成します。
 ms:assetid: a5276781-133b-413c-beca-b851e17c2081
@@ -10,12 +10,11 @@ ms.translationtype: HT
 ---
 
 # SharePoint 2013 の Office Web アプリケーションを構成します。
-
  
 
-_**適用先:**Office Web Apps, SharePoint Foundation 2013, SharePoint Server 2013_
+_**適用先:** Office Web Apps, SharePoint Foundation 2013, SharePoint Server 2013_
 
-_**トピックの最終更新日:**2016-12-16_
+_**トピックの最終更新日:** 2016-12-16_
 
 **概要:** Office Web Apps を使用するために SharePoint 2013 を構成する方法を説明します。
 
@@ -79,49 +78,61 @@ HTTP または HTTPS を使用するかどうかに応じて、次のセクシ�
 
 次のコマンドを実行します。\<WacServerName\> は、内部 URL に設定した URL の完全修飾ドメイン名 (FQDN) です。ここが Office Web Apps サーバー トラフィックのエントリ ポイントになります。このテスト環境では –AllowHTTP パラメーターを指定して、SharePoint 2013 が HTTP を使用して Office Web Apps サーバー ファームからの検出情報を受信できるようにする必要があります。 –AllowHTTP を指定し忘れると、SharePoint 2013 は Office Web Apps サーバー ファームとの通信に HTTPS を使おうとして、このコマンドが失敗します。
 
+```PowerShell
     New-SPWOPIBinding -ServerName <WacServerName> -AllowHTTP
+```
 
 このコマンドを実行した後、Windows PowerShell コマンド プロンプトに表示されるバインドの一覧を参照する必要があります。
 
-ヘルプ情報については、「[New-SPWOPIBinding](new-spwopibinding.md)」を参照してください。
+ヘルプ情報については、「[New-SPWOPIBinding](https://docs.microsoft.com/en-us/powershell/module/sharepoint-server/New-SPWOPIBinding?view=sharepoint-ps)」を参照してください。
 
 ## 手順 3: SharePoint のバインドの WOPI ゾーンを表示する
 
 Office Web Apps サーバー はゾーンの概念を使用して、ホスト (ここでは SharePoint 2013) との通信に使用する URL (内部または外部) とプロトコル (HTTP または HTTPS) を判断します。既定では、SharePoint Server 2013 は **internal-https** ゾーンを使用します。次のコマンドを実行し、カスタマイズ ゾーンを確認します。
 
+```PowerShell
     Get-SPWOPIZone
+```
 
 このコマンドで表示される WOPI ゾーン は **internal-http** である必要があります。正しく表示されている場合は、手順 5 に進みます。そうでない場合は、次の手順を参照してください。
 
-ヘルプ情報については、「[Get-SPWOPIZone](get-spwopizone.md)」を参照してください。
+ヘルプ情報については、「[Get-SPWOPIZone](https://docs.microsoft.com/en-us/powershell/module/sharepoint-server/Get-SPWOPIZone?view=sharepoint-ps)」を参照してください。
 
 ## 手順 4: WOPI ゾーンを internal-http に変更する
 
 手順 3. の実行結果が **internal-https** だった場合は、次のコマンドを実行してゾーンを **internal-http** に変更します。この変更を行うのは、SharePoint 2013 のゾーンと Office Web Apps サーバー ファームのゾーンが一致している必要があるからです。
 
+```PowerShell
     Set-SPWOPIZone -zone "internal-http"
+```
 
 **Get-SPWOPIZone** を再度実行し、新しいゾーンが **internal-http** になっていることを確認します。
 
-ヘルプ情報については、「[Set-SPWOPIZone](set-spwopizone.md)」および「[Get-SPWOPIZone](get-spwopizone.md)」を参照してください。
+ヘルプ情報については、「[Set-SPWOPIZone](https://docs.microsoft.com/en-us/powershell/module/sharepoint-server/Set-SPWOPIZone?view=sharepoint-ps)」および「[Get-SPWOPIZone](https://docs.microsoft.com/en-us/powershell/module/sharepoint-server/Get-SPWOPIZone?view=sharepoint-ps)」を参照してください。
 
 ## 手順 5: SharePoint 2013 で AllowOAuthOverHttp の設定を True に変更する
 
 テスト環境で Office Web Apps を SharePoint 2013 と共に HTTP 経由で使用するには、AllowOAuthOverHttp を **True** に設定する必要があります。この設定を行わないと Office Web Apps は機能しません。現在の状態を確認するには、次のコマンドを実行します。
 
+```PowerShell
     (Get-SPSecurityTokenServiceConfig).AllowOAuthOverHttp
+```
 
 このコマンドを実行して \[**False**\] が返された場合は、次のコマンドを実行して値を \[**True**\] に設定します。
 
+```PowerShell
     $config = (Get-SPSecurityTokenServiceConfig)
 
     $config.AllowOAuthOverHttp = $true
 
     $config.Update()
+```
 
 次のコマンドをもう一度実行して、AllowOAuthOverHttp が \[**True**\] に設定されたことを確認します。
 
+```PowerShell
     (Get-SPSecurityTokenServiceConfig).AllowOAuthOverHttp
+```
 
 ヘルプ情報については、「[Get-SPSecurityTokenServiceConfig](https://technet.microsoft.com/ja-jp/library/ff607642\(v=office.15\))」を参照してください。
 
@@ -133,7 +144,7 @@ Office Web Apps を使用してドキュメントの編集したり表示する�
 
 ## 本番環境では HTTPS を使用します。
 
-以下の手順を開始する前に、「[HTTPS を使用する単一サーバー Office Web Apps Server ファームの展開](e4d51dc4-6460-437d-aa8e-0ae4d3aa8cc5\(office.15\)#singlehttps)」または「[HTTPS を使用する負荷分散された複数サーバー Office Web Apps Server ファームの展開](e4d51dc4-6460-437d-aa8e-0ae4d3aa8cc5\(office.15\)#multihttps)」に記載された手順に従って Office Web Apps サーバー がセットアップされていることを確認してください。
+以下の手順を開始する前に、「[HTTPS を使用する単一サーバー Office Web Apps Server ファームの展開](deploy-office-web-apps-server.md#singlehttps)」または「[HTTPS を使用する負荷分散された複数サーバー Office Web Apps Server ファームの展開](deploy-office-web-apps-server.md#multihttps)」に記載された手順に従って Office Web Apps サーバー がセットアップされていることを確認してください。
 
 ## 手順 1: SharePoint 2013 管理シェルを開く
 
@@ -157,19 +168,23 @@ Office Web Apps を使用してドキュメントの編集したり表示する�
 
 次のコマンドを実行します。\<WacServerName\> は、内部 URL に設定した URL の完全修飾ドメイン名 (FQDN) です。ここが Office Web Apps サーバー トラフィックのエントリ ポイントになります。
 
+```PowerShell
     New-SPWOPIBinding -ServerName <WacServerName> 
+```
 
-ヘルプ情報については、「[New-SPWOPIBinding](new-spwopibinding.md)」を参照してください。
+ヘルプ情報については、「[New-SPWOPIBinding](https://docs.microsoft.com/en-us/powershell/module/sharepoint-server/New-SPWOPIBinding?view=sharepoint-ps)」を参照してください。
 
 ## 手順 3: SharePoint 2013 の WOPI ゾーンを表示する
 
 Office Web Apps サーバー はゾーンの概念を使用して、ホスト (ここでは SharePoint 2013) との通信に使用する URL (内部または外部) とプロトコル (HTTP または HTTPS) を判断します。既定では、SharePoint Server 2013 は **internal-https** ゾーンを使用します。次のコマンドを実行し、これが現在のゾーンになっているかどうかを確認します。
 
+```PowerShell
     Get-SPWOPIZone
+```
 
 表示された WOPI ゾーンを書き留めます。
 
-ヘルプ情報については、「[Get-SPWOPIZone](get-spwopizone.md)」を参照してください。
+ヘルプ情報については、「[Get-SPWOPIZone](https://docs.microsoft.com/en-us/powershell/module/sharepoint-server/Get-SPWOPIZone?view=sharepoint-ps)」を参照してください。
 
 ## 手順 4: 必要に応じて、WOPI ゾーンを変更します。
 
@@ -177,9 +192,11 @@ Office Web Apps サーバー はゾーンの概念を使用して、ホスト (�
 
 手順 3. の実行結果が **internal-https** で、SharePoint ファームが内部のみの場合は、この手順を省略できます。SharePoint ファームが内部と外部にある場合は、次のコマンドを実行してゾーンを **external-https** に変更する必要があります。
 
+```PowerShell
     Set-SPWOPIZone -zone "external-https"
+```
 
-ヘルプ情報については、「[Set-SPWOPIZone](set-spwopizone.md)」を参照してください。
+ヘルプ情報については、「[Set-SPWOPIZone](https://docs.microsoft.com/en-us/powershell/module/sharepoint-server/Set-SPWOPIZone?view=sharepoint-ps)」を参照してください。
 
 ## 手順 6: Office Web Apps が動作することを確認する
 
@@ -209,7 +226,9 @@ SharePoint 2013 と共に使用している Office Web Apps が正常に機能�
 
 これを行うには、SharePoint Server で以下のコマンドを実行します。
 
+```PowerShell
     Get-SPWopiZone 
+```
 
 結果は次のいずれかになります。
 
@@ -223,9 +242,11 @@ SharePoint 2013 と共に使用している Office Web Apps が正常に機能�
 
 次に、SharePoint Server で以下のコマンドを実行します。
 
+```PowerShell
     Get-SPWOPIBinding
+```
 
-出力の中で **WopiZone: *ゾーン*** を見つけます。Get-SPWopiZone の実行結果が Get-SPWOPIBinding によって返されたゾーンと一致しない場合は、SharePoint Server で **Set-SPWOPIZone -Zone** コマンドレットを実行して、Get-SPWOPIBinding の実行結果と一致するように WOPI ゾーンを変更する必要があります。これらのコマンドレットの使い方については、「[Get-SPWOPIBinding](get-spwopibinding.md)」、「[Set-SPWOPIBinding](set-spwopibinding.md)」、および「[Get-SPWOPIZone](get-spwopizone.md)」を参照してください。
+出力の中で **WopiZone: *ゾーン*** を見つけます。Get-SPWopiZone の実行結果が Get-SPWOPIBinding によって返されたゾーンと一致しない場合は、SharePoint Server で **Set-SPWOPIZone -Zone** コマンドレットを実行して、Get-SPWOPIBinding の実行結果と一致するように WOPI ゾーンを変更する必要があります。これらのコマンドレットの使い方については、「[Get-SPWOPIBinding](https://docs.microsoft.com/en-us/powershell/module/sharepoint-server/Get-SPWOPIBinding?view=sharepoint-ps)」、「[Set-SPWOPIBinding](https://docs.microsoft.com/en-us/powershell/module/sharepoint-server/Set-SPWOPIBinding?view=sharepoint-ps)」、および「[Get-SPWOPIZone](https://docs.microsoft.com/en-us/powershell/module/sharepoint-server/Get-SPWOPIZone?view=sharepoint-ps)」を参照してください。
 
 ## 問題: Office Web Apps で Office 文書を編集しようとすると、\[申し訳ございません。この文書を開いて編集することはできません。\] というエラー が表示される。
 
@@ -239,7 +260,7 @@ Active Directory (AD) セキュリティ グループのメンバーであるユ
 
 HTTP を使用するテスト環境で Office Web Apps をセットアップした場合は、「手順 5: SharePoint 2013 で AllowOAuthOverHttp の設定を True に変更する」で説明しているように AllowOAuthOverHttp が \[**True**\] に設定されていることを確認します。
 
-[New-OfficeWebAppsHost](new-officewebappshost.md) コマンドレットを使用して許可リストにドメインを追加した場合は、許可リストにあるホスト ドメインから Office Web Apps にアクセスしているか確認します。許可リストのホスト ドメインを表示するには、Office Web Apps サーバー で管理者として Windows PowerShell プロンプトを開き、[Get-OfficeWebAppsHost](get-officewebappshost.md) コマンドレットを実行します。 許可リストにドメインを追加するには、[New-OfficeWebAppsHost](new-officewebappshost.md) コマンドレットを使用します。
+[New-OfficeWebAppsHost](https://docs.microsoft.com/en-us/powershell/module/officewebapps/new-officewebappshost?view=officewebapps-ps) コマンドレットを使用して許可リストにドメインを追加した場合は、許可リストにあるホスト ドメインから Office Web Apps にアクセスしているか確認します。許可リストのホスト ドメインを表示するには、Office Web Apps サーバー で管理者として Windows PowerShell プロンプトを開き、[Get-OfficeWebAppsHost](https://docs.microsoft.com/en-us/powershell/module/officewebapps/get-officewebappshost?view=officewebapps-ps) コマンドレットを実行します。 許可リストにドメインを追加するには、[New-OfficeWebAppsHost](https://docs.microsoft.com/en-us/powershell/module/officewebapps/new-officewebappshost?view=officewebapps-ps) コマンドレットを使用します。
 
 ## 問題: Office Web Apps で Office ドキュメントを表示しようとすると、「申し訳ございません。サービスがビジー状態のため、このドキュメントを Word Web App で開くことができません。しばらくしてから、もう一度お試しください。」というエラーが出る。
 
@@ -277,21 +298,23 @@ HTTP を使用するテスト環境で Office Web Apps をセットアップし�
 
 6.  ブックを再度 SharePoint ドキュメント ライブラリにアップロードします。
 
-ブラウザー ウィンドウでデータ モデルまたは Power View ビューが含まれるブックを操作できるようにするには、ブックが表示されるように SharePoint Server で Excel Services を構成します。これを行うには、SharePoint Server がインストールされているサーバーで SharePoint 管理者が New-SPWOPISupressionSetting コマンドレットを実行する必要があります。詳細については、「[New-SPWOPISuppressionSetting](new-spwopisuppressionsetting.md)」および「[SharePoint Server 2013 で Excel Services を管理する](https://technet.microsoft.com/ja-jp/library/ee681487\(v=office.15\))」を参照してください。
+ブラウザー ウィンドウでデータ モデルまたは Power View ビューが含まれるブックを操作できるようにするには、ブックが表示されるように SharePoint Server で Excel Services を構成します。これを行うには、SharePoint Server がインストールされているサーバーで SharePoint 管理者が New-SPWOPISupressionSetting コマンドレットを実行する必要があります。詳細については、「[New-SPWOPISuppressionSetting](https://docs.microsoft.com/en-us/powershell/module/sharepoint-server/New-SPWOPISuppressionSetting?view=sharepoint-ps)」および「[SharePoint Server 2013 で Excel Services を管理する](https://technet.microsoft.com/ja-jp/library/ee681487\(v=office.15\))」を参照してください。
 
 ## Office Web Apps サーバーからの SharePoint 2013 の切断
 
 何らかの理由で Office Web Apps サーバー から SharePoint 2013 の接続を切断する場合は、次のコマンドを使用します。
 
+```PowerShell
     Remove-SPWOPIBinding -All:$true
+```
 
-ヘルプ情報については、「[Remove-SPWOPIBinding](remove-spwopibinding.md)」を参照してください。
+ヘルプ情報については、「[Remove-SPWOPIBinding](https://docs.microsoft.com/en-us/powershell/module/sharepoint-server/Remove-SPWOPIBinding?view=sharepoint-ps)」を参照してください。
 
 ## 関連項目
 
 
-[New-SPWOPIBinding](new-spwopibinding.md)  
-[Set-SPWOPIZone](set-spwopizone.md)  
+[New-SPWOPIBinding](https://docs.microsoft.com/en-us/powershell/module/sharepoint-server/New-SPWOPIBinding?view=sharepoint-ps)  
+[Set-SPWOPIZone](https://docs.microsoft.com/en-us/powershell/module/sharepoint-server/Set-SPWOPIZone?view=sharepoint-ps)  
 
 
 [Office Web Apps サーバーのコンテンツ ロードマップ](content-roadmap-for-office-web-apps-server.md)  

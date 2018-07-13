@@ -13,9 +13,9 @@ ms.translationtype: HT
 
  
 
-_**適用先:**Office Web Apps Server_
+_**適用先:** Office Web Apps Server_
 
-_**トピックの最終更新日:**2016-12-16_
+_**トピックの最終更新日:** 2016-12-16_
 
 **概要:** ソフトウェア更新プログラムを Office Web Apps サーバーファームへ適用する方法について説明します。
 
@@ -28,11 +28,8 @@ Office Web Apps サーバー の新しいリリースの後、マイクロソフ
 > この記事は、<A href="content-roadmap-for-office-web-apps-server.md">Office Web Apps サーバーのコンテンツ ロードマップ</A>に含まれています。このロードマップは、Office Web Apps サーバー の展開と管理に役立つ記事、ダウンロード、ビデオなどを参照する際の出発点として使用します。<BR><STRONG>使用しているデスクトップまたはモバイル デバイスの Office Web Apps に関する情報</STRONG>をお探しの場合は、<A href="http://go.microsoft.com/fwlink/p/?linkid=324961">Office.com</A> で「Office Web Apps」を検索してください。
 
 
-
-
 > [!WARNING]
-> 自動更新プロセスを使用した Office Web Apps サーバー 更新プログラムの適用は Office Web Apps サーバー ではサポートされていません。Office Web Apps サーバー への更新は、この記事で説明しているような、特別な方法で適用する必要があるからです。Office Web Apps サーバー の更新が自動的に適用されると、ユーザーは Office Web Apps のドキュメントを表示または編集できなくなることがあります。この場合、Office Web Apps サーバー ファームをビルドし直す必要があります。ファームをビルドし直すには、<A href="remove-officewebappsmachine.md">Remove-OfficeWebAppsMachine</A> を使用して Office Web Apps サーバー をファームから削除し、プログラムの追加と削除を使用して Office Web Apps サーバー をアンインストールし、さらに「<A href="deploy-office-web-apps-server.md">Office Web Apps サーバーの展開</A>」で説明されている手順に従って Office Web Apps サーバー を再インストールします。再インストール後、この記事で説明している次の手順に従い、更新プログラムを適用します。<BR>「<A href="plan-office-web-apps-server.md">Office Web Apps サーバーの更新プログラムの計画</A>」のガイドラインを確認し、Office Web Apps サーバー ファームの更新プロセスを確立することが重要です。
-
+> 自動更新プロセスを使用した Office Web Apps サーバー 更新プログラムの適用は Office Web Apps サーバー ではサポートされていません。Office Web Apps サーバー への更新は、この記事で説明しているような、特別な方法で適用する必要があるからです。Office Web Apps サーバー の更新が自動的に適用されると、ユーザーは Office Web Apps のドキュメントを表示または編集できなくなることがあります。この場合、Office Web Apps サーバー ファームをビルドし直す必要があります。ファームをビルドし直すには、<A href="https://docs.microsoft.com/en-us/powershell/module/officewebapps/remove-officewebappsmachine?view=officewebapps-ps">Remove-OfficeWebAppsMachine</A> を使用して Office Web Apps サーバー をファームから削除し、プログラムの追加と削除を使用して Office Web Apps サーバー をアンインストールし、さらに「<A href="deploy-office-web-apps-server.md">Office Web Apps サーバーの展開</A>」で説明されている手順に従って Office Web Apps サーバー を再インストールします。再インストール後、この記事で説明している次の手順に従い、更新プログラムを適用します。<BR>「<A href="plan-office-web-apps-server.md">Office Web Apps サーバーの更新プログラムの計画</A>」のガイドラインを確認し、Office Web Apps サーバー ファームの更新プロセスを確立することが重要です。
 
 
 ## はじめに
@@ -41,7 +38,7 @@ Office Web Apps サーバー の使用可能な最新の更新プログラムの
 
 Office Web Apps サーバー 用にリリースされた更新プログラムは、インストールされた Office Web Apps サーバー およびすべての Office Web Apps サーバー 言語パックを更新します。Office Web Apps サーバー 言語パックごとの個別の更新プログラムはありません。
 
-更新プロセスの一部として、Office Web Apps サーバー ファームを再作成する必要があります。Office Web Apps サーバー ファームの再作成を準備するには、Windows PowerShell コマンドレット **Get-OfficeWebAppFarm** を実行して現在の Office Web Apps サーバー ファーム プロパティを確認し、[New-OfficeWebAppsFarm](new-officewebappsfarm.md) のパラメーターを確認します。**New-OfficeWebAppsFarm** に使用するパラメーターは、最初に Office Web Apps サーバー ファームを設定したときに使用したパラメーターと同じである必要があります。
+更新プロセスの一部として、Office Web Apps サーバー ファームを再作成する必要があります。Office Web Apps サーバー ファームの再作成を準備するには、Windows PowerShell コマンドレット **Get-OfficeWebAppFarm** を実行して現在の Office Web Apps サーバー ファーム プロパティを確認し、[New-OfficeWebAppsFarm](https://docs.microsoft.com/en-us/powershell/module/officewebapps/new-officewebappsfarm?view=officewebapps-ps) のパラメーターを確認します。**New-OfficeWebAppsFarm** に使用するパラメーターは、最初に Office Web Apps サーバー ファームを設定したときに使用したパラメーターと同じである必要があります。
 
 
 > [!NOTE]
@@ -64,7 +61,9 @@ Office Web Apps サーバー 用にリリースされた更新プログラムは
 
 2.  ソフトウェア更新プログラムを適用する Office Web Apps サーバー で、管理者として Windows PowerShell プロンプトを開き、次のコマンドを実行します。
     
+    ```PowerShell
         Remove-OfficeWebAppsMachine
+    ```
 
 3.  Install the Office Web Apps サーバー update on that server. If prompted, restart the server.
 
@@ -72,9 +71,11 @@ Office Web Apps サーバー 用にリリースされた更新プログラムは
     
     次に、http://Contoso-WAC という新しい Office Web Apps サーバー ファームを作成するコード例を示します。
     
+    ```PowerShell
         New-OfficeWebAppsFarm -InternalURL "http://Contoso-WAC" -AllowHttp -EditingEnabled
+    ```
     
-    翻訳サービス、プロキシ サーバー、クリップ アート サポート、およびオンライン ビューアーを構成するその他のパラメーターについては、「[New-OfficeWebAppsFarm](new-officewebappsfarm.md)」を参照してください。
+    翻訳サービス、プロキシ サーバー、クリップ アート サポート、およびオンライン ビューアーを構成するその他のパラメーターについては、「[New-OfficeWebAppsFarm](https://docs.microsoft.com/en-us/powershell/module/officewebapps/new-officewebappsfarm?view=officewebapps-ps)」を参照してください。
 
 ## 複数の Office Web Apps サーバーファームへのソフトウェア更新プログラムの適用
 
@@ -88,7 +89,9 @@ Office Web Apps サーバー 用にリリースされた更新プログラムは
 
 3.  その Office Web Apps サーバー で、管理者として Windows PowerShell プロンプトを開き、次のコマンドを実行します。
     
+    ```PowerShell
         Remove-OfficeWebAppsMachine
+    ```
 
 4.  Install the Office Web Apps サーバー update on that server. If prompted, restart the server.
 
@@ -96,9 +99,11 @@ Office Web Apps サーバー 用にリリースされた更新プログラムは
     
     次に、http://Contoso-WAC という新しい Office Web Apps サーバー ファームを作成するコード例を示します。
     
+    ```PowerShell
         New-OfficeWebAppsFarm -InternalURL "http://Contoso-WAC" -AllowHttp -EditingEnabled
+    ```
     
-    翻訳サービス、プロキシ サーバー、クリップ アート サポート、およびオンライン ビューアーを構成するその他のパラメーターについては、「[New-OfficeWebAppsFarm](new-officewebappsfarm.md)」を参照してください。
+    翻訳サービス、プロキシ サーバー、クリップ アート サポート、およびオンライン ビューアーを構成するその他のパラメーターについては、「[New-OfficeWebAppsFarm](https://docs.microsoft.com/en-us/powershell/module/officewebapps/new-officewebappsfarm?view=officewebapps-ps)」を参照してください。
 
 6.  Office Web Apps サーバー ファーム内のサーバーの数に応じて、新しいファームへのトラフィックの負荷を分散します。この手順は、もっと多くの更新されたサーバーをファームへ追加してから行うことができます。
 
@@ -110,15 +115,17 @@ Office Web Apps サーバー 用にリリースされた更新プログラムは
     
     3.  管理者として Windows PowerShell プロンプトを開き、次のコマンドを実行します。**–MachineToJoin** パラメーターは、現在のサーバーを既存の Office Web Apps サーバー ファームに追加します。この場合、サーバーを更新された Office Web Apps サーバー ファームに追加します。そのため、更新された Office Web Apps サーバー ファームのいずれかのサーバーのコンピューター名を使用します。
         
+        ```PowerShell
             New-OfficeWebAppsMachine -MachineToJoin "server1.contoso.com"
+        ```
 
 ## 関連項目
 
 
-[Remove-OfficeWebAppsMachine](remove-officewebappsmachine.md)  
-[New-OfficeWebAppsMachine](new-officewebappsmachine.md)  
-[New-OfficeWebAppsFarm](new-officewebappsfarm.md)  
-[Get-OfficeWebAppsFarm](get-officewebappsfarm.md)  
+[Remove-OfficeWebAppsMachine](https://docs.microsoft.com/en-us/powershell/module/officewebapps/remove-officewebappsmachine?view=officewebapps-ps)  
+[New-OfficeWebAppsMachine](https://docs.microsoft.com/en-us/powershell/module/officewebapps/new-officewebappsmachine?view=officewebapps-ps)  
+[New-OfficeWebAppsFarm](https://docs.microsoft.com/en-us/powershell/module/officewebapps/new-officewebappsfarm?view=officewebapps-ps)  
+[Get-OfficeWebAppsFarm](https://docs.microsoft.com/en-us/powershell/module/officewebapps/get-officewebappsfarm?view=officewebapps-ps)  
 
 
 [Office Web Apps サーバーのコンテンツ ロードマップ](content-roadmap-for-office-web-apps-server.md)  

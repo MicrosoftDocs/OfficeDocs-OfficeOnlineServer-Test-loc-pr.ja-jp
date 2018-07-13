@@ -13,9 +13,9 @@ ms.translationtype: HT
 
  
 
-_**適用先:**Office Web Apps, SharePoint Foundation 2013, SharePoint Server 2013_
+_**適用先:** Office Web Apps, SharePoint Foundation 2013, SharePoint Server 2013_
 
-_**トピックの最終更新日:**2016-12-16_
+_**トピックの最終更新日:** 2016-12-16_
 
 **概要:** SharePoint サイト コレクションと SharePoint ドキュメント ライブラリで Office ドキュメントを表示する既定の方法を構成する方法について説明します。
 
@@ -27,7 +27,7 @@ SharePoint 2013 ドキュメント ライブラリ内のドキュメントを開
 
 既定では、SharePoint 2013 を Office Web Apps サーバー を使用するように構成した場合は、Word、PowerPoint、Excel、OneNote ファイルをクリックするとブラウザーで開かれます。PDF ドキュメントは Word Web App Web App で開きます。代わりに、クライアント アプリケーション (または既定の PDF リーダー) でファイルを開くように既定の動作を変更する方法が 2 つあります。
 
-  - **SharePoint 2013 ファーム** [New-SPWOPIBinding](new-spwopibinding.md) コマンドレットと [Set-SPWOPIBinding](set-spwopibinding.md)Windows PowerShell コマンドレットを使用して SharePoint 2013 ファームでファイルの種類ごとに既定のオープン動作を調整できます。これらのコマンドレットは、「[PDF ドキュメントの動作の調整](http://go.microsoft.com/fwlink/p/?linkid=330246)」に使用することもできます。
+  - **SharePoint 2013 ファーム** [New-SPWOPIBinding](https://docs.microsoft.com/en-us/powershell/module/sharepoint-server/New-SPWOPIBinding?view=sharepoint-ps) コマンドレットと [Set-SPWOPIBinding](https://docs.microsoft.com/en-us/powershell/module/sharepoint-server/Set-SPWOPIBinding?view=sharepoint-ps)Windows PowerShell コマンドレットを使用して SharePoint 2013 ファームでファイルの種類ごとに既定のオープン動作を調整できます。これらのコマンドレットは、「[PDF ドキュメントの動作の調整](http://go.microsoft.com/fwlink/p/?linkid=330246)」に使用することもできます。
 
   - **サイト コレクションまたはドキュメント ライブラリ**   サイト コレクション管理者およびユーザーは、SharePoint 2013 の OpenInClient 機能を使用して Office ファイルをクライアント アプリケーションで開くか、ブラウザーで開くかを指定できます。ユーザーは、この設定をドキュメント ライブラリのプロパティで変更できます。サイト コレクション管理者は、この設定を \[サイト コレクションの管理\] で変更することも、[Enable-SPFeature](https://technet.microsoft.com/ja-jp/library/ff607803\(v=office.15\)) コマンドレットを使用して OpenInClient 機能を有効にすることによって変更することもできます。OpenInClient 機能を有効にするためのさまざまな方法については次のセクションを参照してください。
 
@@ -45,7 +45,7 @@ SharePoint 2013 の OpenInClient 機能を設定するには、次の手順の�
 
 
 > [!NOTE]
-> これらの手順の一部では、SharePoint 2013 管理シェル を使用して SharePoint コマンドレットを実行します。Windows PowerShell コンソールの使用を選択する場合は、<STRONG>Add-PSSnapin</STRONG> コマンドレットを使用して Microsoft.SharePoint.PowerShell スナップインを追加する必要があります。Windows PowerShell とSharePoint 2013を併用する方法の詳細は、「<A href="use-windows-powershell-to-administer-sharepoint-2013.md">Windows Powershell を使用して SharePoint 2013 を管理する</A>」を参照してください。
+> これらの手順の一部では、SharePoint 2013 管理シェル を使用して SharePoint コマンドレットを実行します。Windows PowerShell コンソールの使用を選択する場合は、<STRONG>Add-PSSnapin</STRONG> コマンドレットを使用して Microsoft.SharePoint.PowerShell スナップインを追加する必要があります。Windows PowerShell とSharePoint 2013を併用する方法の詳細は、「<A href="https://docs.microsoft.com/en-us/powershell/module/sharepoint-server/?view=sharepoint-ps">Windows Powershell を使用して SharePoint 2013 を管理する</A>」を参照してください。
 
 
 
@@ -79,7 +79,7 @@ SharePoint 2013 の OpenInClient 機能を設定するには、次の手順の�
     
 
     > [!NOTE]
-    > アクセス許可がない場合は、セットアップ管理者または SQL Server 管理者に連絡してアクセス許可を要求してください。Windows PowerShell アクセス許可の追加情報については、「<A href="use-windows-powershell-to-administer-sharepoint-2013.md">アクセス許可</A>」と「<A href="https://technet.microsoft.com/ja-jp/library/ff607596(v=office.15)">Add-SPShellAdmin</A>」を参照してください。
+    > アクセス許可がない場合は、セットアップ管理者または SQL Server 管理者に連絡してアクセス許可を要求してください。Windows PowerShell アクセス許可の追加情報については、「<A href="https://docs.microsoft.com/en-us/powershell/module/sharepoint-server/?view=sharepoint-ps">アクセス許可</A>」と「<A href="https://technet.microsoft.com/ja-jp/library/ff607596(v=office.15)">Add-SPShellAdmin</A>」を参照してください。
 
 
 
@@ -107,23 +107,33 @@ SharePoint 2013 の OpenInClient 機能を設定するには、次の手順の�
     
       - 特定のサイト コレクションに対して OpenInClient 機能を有効にする (ドキュメントをクライアント アプリケーションで開くため) には、次のコマンドを入力します。
         
+        ```PowerShell
             Enable-SPFeature 8A4B8DE2-6FD8-41e9-923C-C7C3C00F8295 -url <SiteCollURL>
-        
+        ```
+        ```  
         ここで、*\<SiteCollURL\>* は、サイト コレクションの URL です。
+        ```
     
       - すべてのサイト コレクションに対して OpenInClient 機能を有効にする (ドキュメントをクライアント アプリケーションで開くため) には、次のコマンドを入力します。
-        
+
+        ```PowerShell  
             Get-SPSite -limit ALL |foreach{ Enable-SPFeature 8A4B8DE2-6FD8-41e9-923C-C7C3C00F8295 -url $_.URL }
+        ```
     
       - 特定のサイト コレクションに対して OpenInClient 機能を無効にする (ドキュメントをブラウザーで開くため) には、次のコマンドを入力します。
         
+        ```PowerShell 
             Disable-SPFeature 8A4B8DE2-6FD8-41e9-923C-C7C3C00F8295 -url <SiteCollURL>
-        
+        ``` 
+        ```       
         ここで、*\<SiteCollURL\>* は、サイト コレクションの URL です。
+        ```
     
       - すべてのサイト コレクションに対して OpenInClient 機能を無効にする (ドキュメントをブラウザーで開くため) には、次のコマンドを入力します。
-        
+
+        ```PowerShell   
             Get-SPSite -limit ALL |foreach{ Disable-SPFeature 8A4B8DE2-6FD8-41e9-923C-C7C3C00F8295 -url $_.URL }
+        ```
 
  **ドキュメント ライブラリ設定ページを使用してドキュメント ライブラリを表示する既定の方法を設定する**
 
@@ -157,7 +167,7 @@ SharePoint 2013 の OpenInClient 機能を設定するには、次の手順の�
     
 
     > [!NOTE]
-    > アクセス許可がない場合は、セットアップ管理者または SQL Server 管理者に連絡してアクセス許可を要求してください。Windows PowerShell アクセス許可の追加情報については、「<A href="use-windows-powershell-to-administer-sharepoint-2013.md">アクセス許可</A>」と「<A href="https://technet.microsoft.com/ja-jp/library/ff607596(v=office.15)">Add-SPShellAdmin</A>」を参照してください。
+    > アクセス許可がない場合は、セットアップ管理者または SQL Server 管理者に連絡してアクセス許可を要求してください。Windows PowerShell アクセス許可の追加情報については、「<A href="https://docs.microsoft.com/en-us/powershell/module/sharepoint-server/?view=sharepoint-ps">アクセス許可</A>」と「<A href="https://technet.microsoft.com/ja-jp/library/ff607596(v=office.15)">Add-SPShellAdmin</A>」を参照してください。
 
 
 
@@ -183,7 +193,9 @@ SharePoint 2013 の OpenInClient 機能を設定するには、次の手順の�
 
 3.  Windows PowerShell コマンド プロンプトで、次のコマンドを入力します。
     
+      ```PowerShell
         Get-SPWeb -site <SiteCollURL> | % {$_.Lists} | where {$_.IrmEnabled -eq $true} | % {$_.DefaultItemOpen =[Microsoft.Sharepoint.DefaultItemOpen]::<DefaultItemOpenSetting>; $_.Update()}
+      ```
     
     各部分の意味は次のとおりです。
     
@@ -194,11 +206,11 @@ SharePoint 2013 の OpenInClient 機能を設定するには、次の手順の�
 ## 関連項目
 
 
-[Get-SPWOPIBinding](get-spwopibinding.md)  
+[Get-SPWOPIBinding](https://docs.microsoft.com/en-us/powershell/module/sharepoint-server/Get-SPWOPIBinding?view=sharepoint-ps)  
 
 
 [Office Web Apps サーバーのコンテンツ ロードマップ](content-roadmap-for-office-web-apps-server.md)  
-[Windows Powershell を使用して SharePoint 2013 を管理する](use-windows-powershell-to-administer-sharepoint-2013.md)  
+[Windows Powershell を使用して SharePoint 2013 を管理する](https://docs.microsoft.com/en-us/powershell/module/sharepoint-server/?view=sharepoint-ps)  
 [Office Web Apps サーバー](office-web-apps-server.md)  
 
 

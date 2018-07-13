@@ -41,7 +41,7 @@ _**トピックの最終更新日:**2016-12-16_
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="windows-powershell-for-office-web-apps-sharepoint-2013.md">Office Web Apps で使用できる Windows PowerShell (SharePoint 2013)</a></p></td>
+<td><p><a href="https://docs.microsoft.com/en-us/powershell/module/sharepoint-server/?view=sharepoint-ps">Office Web Apps で使用できる Windows PowerShell (SharePoint 2013)</a></p></td>
 <td><p>Office Web Apps を使用するための SharePoint 2013 の構成に使用する Windows PowerShell コマンドレットの一覧です。</p></td>
 </tr>
 </tbody>

@@ -1,4 +1,4 @@
-﻿---
+---
 title: Office Web Apps サーバーの計画
 TOCTitle: Office Web Apps サーバーの計画
 ms:assetid: 2e147f11-6f47-46bc-90bf-b2f179958d11
@@ -13,9 +13,9 @@ ms.translationtype: HT
 
  
 
-_**適用先:**Office Web Apps Server_
+_**適用先:** Office Web Apps Server_
 
-_**トピックの最終更新日:**2017-10-10_
+_**トピックの最終更新日:** 2017-10-10_
 
 **概要:** HTTPS、証明書、仮想化、負荷分散、トポロジ、セキュリティなど、Office Web Apps Serverの要件と前提条件について説明します。
 
@@ -87,7 +87,7 @@ Office Web Apps サーバー ファーム内のすべてのサーバーを 1 つ
 
   - **Office Web Apps サーバー を実行しているサーバーに、他のサーバー アプリケーションをインストールしないでください**。これには、Exchange Server、SharePoint Server、Lync Server、SQL Server が含まれます。ハードウェアの台数が不足している場合は、いずれかのサーバーの仮想マシン インスタンスで Office Web Apps サーバー を実行することを検討してください。
 
-  - **ポート 80、443、または 809 の Web サーバー (IIS) の役割を利用するサービスまたは役割をインストールしないでください。**これは、Office Web Apps サーバー によって、これらのポートの Web アプリケーションが定期的に削除されるためです。
+  - **ポート 80、443、または 809 の Web サーバー (IIS) の役割を利用するサービスまたは役割をインストールしないでください。** これは、Office Web Apps サーバー によって、これらのポートの Web アプリケーションが定期的に削除されるためです。
 
   - **どのバージョンの Office もインストールしないでください**。すでにインストールされている場合は、Office Web Apps サーバー をインストールする前にアンインストールする必要があります。
 
@@ -320,25 +320,27 @@ Office Web Apps サーバー 2013 言語パックを使用すると、SharePoint
 
 Office Web Apps サーバー トポロジがより複雑になった場合に留意すべき推奨事項の一覧を以下に示します。
 
-  - **冗長性を計画する。**仮想マシン インスタンスを使用する場合は、それらが別々の仮想マシン ホストに配置され、冗長性が確保されていることを確認します。ホスト上の他のインスタンスがサーバー アプリケーションを実行している場合は、Office Web Apps サーバー と同じインスタンス上で他のサーバー アプリケーションを実行しないようにするだけで十分です。
+  - **冗長性を計画する。** 仮想マシン インスタンスを使用する場合は、それらが別々の仮想マシン ホストに配置され、冗長性が確保されていることを確認します。ホスト上の他のインスタンスがサーバー アプリケーションを実行している場合は、Office Web Apps サーバー と同じインスタンス上で他のサーバー アプリケーションを実行しないようにするだけで十分です。
 
-  - **1 つのデータ センターを使用する。**Office Web Apps サーバー ファーム内のサーバーは、同じデータ センター内に配置する必要があります。地理的に離れた場所に分散させないでください。Office Web Apps サーバー ファームが存在するネットワークを分離しなければならないようなセキュリティ要件がないかぎり、1 つのファームだけで十分です。
+  - **1 つのデータ センターを使用する。** Office Web Apps サーバー ファーム内のサーバーは、同じデータ センター内に配置する必要があります。地理的に離れた場所に分散させないでください。Office Web Apps サーバー ファームが存在するネットワークを分離しなければならないようなセキュリティ要件がないかぎり、1 つのファームだけで十分です。
 
-  - **ホストに近いほど良い。**Office Web Apps サーバー ファームは、そのホストと同じデータ センター内に配置する必要はありませんが、編集の頻度が高い場合は、Office Web Apps サーバー ファームをできるだけホストのそばに配置することをお勧めします。このことは、Office Web Apps を主に Office ファイルの表示に使用している組織にとってはそれほど重要ではありません。
+  - **ホストに近いほど良い。** Office Web Apps サーバー ファームは、そのホストと同じデータ センター内に配置する必要はありませんが、編集の頻度が高い場合は、Office Web Apps サーバー ファームをできるだけホストのそばに配置することをお勧めします。このことは、Office Web Apps を主に Office ファイルの表示に使用している組織にとってはそれほど重要ではありません。
 
-  - **接続を計画する。**Office Web Apps サーバー ファーム内のすべてのサーバーだけを相互に接続します。より広いネットワークに接続するには、リバース プロキシ ロード バランサー ファイアウォール経由で接続します。
+  - **接続を計画する。** Office Web Apps サーバー ファーム内のすべてのサーバーだけを相互に接続します。より広いネットワークに接続するには、リバース プロキシ ロード バランサー ファイアウォール経由で接続します。
 
-  - **HTTP または HTTPS 要求用にファイアウォールを構成する。**ファイアウォールが Office Web Apps サーバー を実行しているサーバーでホストへの HTTP または HTTPS 要求を初期化できるように構成されていることを確認します。
+  - **HTTP または HTTPS 要求用にファイアウォールを構成する。** ファイアウォールが Office Web Apps サーバー を実行しているサーバーでホストへの HTTP または HTTPS 要求を初期化できるように構成されていることを確認します。
 
-  - **着信と発信を計画する。**インターネットに接続する展開では、すべての発信を NAT デバイス経由でルーティングします。マルチサーバー ファームでは、すべての着信をロード バランサーを使用して処理します。
+  - **着信と発信を計画する。** インターネットに接続する展開では、すべての発信を NAT デバイス経由でルーティングします。マルチサーバー ファームでは、すべての着信をロード バランサーを使用して処理します。
 
-  - **Office Web Apps サーバー ファーム内のすべてのサーバーが 1 つのドメインに参加しており、同じ組織単位 (OU) の一部になっていることを確認する。**この OU に含まれない他のサーバーがファームに参加することを防ぐには、[New-OfficeWebAppsFarm](new-officewebappsfarm.md) コマンドレットの **FarmOU** パラメーターを使用します。
+
+  - **Office Web Apps サーバー ファーム内のすべてのサーバーが 1 つのドメインに参加しており、同じ組織単位 (OU) の一部になっていることを確認する。**この OU に含まれない他のサーバーがファームに参加することを防ぐには、[New-OfficeWebAppsFarm](https://docs.microsoft.com/en-us/powershell/module/officewebapps/new-officewebappsfarm?view=officewebapps-ps) コマンドレットの **FarmOU** パラメーターを使用します。
+
 
   - **すべての着信要求にハイパーテキスト転送プロトコル セキュア (HTTPS) を使用する。**
 
   - **ネットワークに IPsec が展開されている場合は、それをサーバー間のトラフィックの暗号化に使用する。**
 
-  - **インターネットを使用する Office 機能を計画する。**クリップ アートや翻訳サービスなどの機能が必要であり、ファーム内のサーバーがインターネットへの要求を開始できない場合、Office Web Apps サーバー ファーム用のプロキシ サーバーを構成する必要があります。これにより、外部サイトへの HTTP 要求が許可されます。
+  - **インターネットを使用する Office 機能を計画する。** クリップ アートや翻訳サービスなどの機能が必要であり、ファーム内のサーバーがインターネットへの要求を開始できない場合、Office Web Apps サーバー ファーム用のプロキシ サーバーを構成する必要があります。これにより、外部サイトへの HTTP 要求が許可されます。
 
 ## Office Web Apps サーバーのセキュリティ計画
 
@@ -390,13 +392,13 @@ HTTP を使用している場合は、ロード バランサーから Office Web
 
 ## Office Web Apps サーバーファームに参加できるサーバーを OU メンバーシップに基づいて制限する
 
-対象サーバーの組織単位を作成してから、ファームを作成するときに FarmOU パラメーターを指定することで、無許可のサーバーが Office Web Apps サーバー ファームに参加するのを防ぐことができます。FarmOU パラメーターの詳細については、「[New-OfficeWebAppsFarm](new-officewebappsfarm.md)」を参照してください。
+対象サーバーの組織単位を作成してから、ファームを作成するときに FarmOU パラメーターを指定することで、無許可のサーバーが Office Web Apps サーバー ファームに参加するのを防ぐことができます。FarmOU パラメーターの詳細については、「[New-OfficeWebAppsFarm](https://docs.microsoft.com/en-us/powershell/module/officewebapps/new-officewebappsfarm?view=officewebapps-ps)」を参照してください。
 
 ## 許可リストを使用して Office Web Apps サーバーのホスト アクセスを制限する
 
 許可リストは、不要なホストが Office Web Apps サーバー ファームに接続して、同意なしにファームを使用してファイルを処理するのを防ぐセキュリティ機能です。承認されたホストを含むドメインを許可リストに追加することで、Office Web Apps サーバー がファイル処理要求 (ファイルの取得、メタデータの取得、ファイルの変更など) を許可するホストを制限できます。
 
-Office Web Apps サーバー ファームを作成した後で許可リストにドメインを追加できます。許可リストにドメインを追加する方法については、「[New-OfficeWebAppsHost](new-officewebappshost.md)」を参照してください。
+Office Web Apps サーバー ファームを作成した後で許可リストにドメインを追加できます。許可リストにドメインを追加する方法については、「[New-OfficeWebAppsHost](https://docs.microsoft.com/en-us/powershell/module/officewebapps/new-officewebappshost?view=officewebapps-ps)」を参照してください。
 
 
 > [!IMPORTANT]
@@ -406,19 +408,19 @@ Office Web Apps サーバー ファームを作成した後で許可リストに
 
 ## Office Web Apps サーバーを使用したオンライン ビューアーの計画
 
-既定では、Office Web Apps サーバー のインストール後にオンライン ビューアー機能が有効になります。組織でオンライン ビューアーの使用を計画している場合は、以下のガイドラインを確認してください。場合によっては、オンライン ビューアーの一部の機能を無効にすることをお勧めします。これらのガイドラインで参照するパラメーターは、Windows PowerShell のコマンドレット [New-OfficeWebAppsFarm](new-officewebappsfarm.md) と [Set-OfficeWebAppsFarm](set-officewebappsfarm.md) を使用して設定されます。
+既定では、Office Web Apps サーバー のインストール後にオンライン ビューアー機能が有効になります。組織でオンライン ビューアーの使用を計画している場合は、以下のガイドラインを確認してください。場合によっては、オンライン ビューアーの一部の機能を無効にすることをお勧めします。これらのガイドラインで参照するパラメーターは、Windows PowerShell のコマンドレット [New-OfficeWebAppsFarm](https://docs.microsoft.com/en-us/powershell/module/officewebapps/new-officewebappsfarm?view=officewebapps-ps) と [Set-OfficeWebAppsFarm](https://docs.microsoft.com/en-us/powershell/module/officewebapps/set-officewebappsfarm?view=officewebapps-ps) を使用して設定されます。
 
 ## オンライン ビューアーのセキュリティの考慮事項
 
 オンライン ビューアーを使用して Web ブラウザーで表示するためのファイルは、認証が要らないようにする必要があります。つまり、ファイルを公開する必要があります。これは、オンライン ビューアーがファイルの取得時に認証を実行できないためです。オンライン ビューアーで使用する Office Web Apps サーバー ファームは、イントラネットとインターネットのどちらか一方のみ (両方ではなく) にアクセスできるようにすることを強くお勧めします。Office Web Apps サーバー は、イントラネット URL とインターネット URL の要求を区別しないためです。たとえば、インターネット上の誰かがイントラネット URL を要求できると、内部文書が表示された場合に情報漏れが発生する可能性があります。
 
-同じ理由から、Office Web Apps サーバー をインターネットのみに接続するように設定した場合は、オンライン ビューアーの UNC サポートを無効にすることを強くお勧めします。UNC サポートを無効にするには、Windows PowerShell のコマンドレット [New-OfficeWebAppsFarm](new-officewebappsfarm.md) (新規ファーム用) または [Set-OfficeWebAppsFarm](set-officewebappsfarm.md) (既存ファーム用) を使用して OpenFromUncEnabled パラメーターを False に設定します。
+同じ理由から、Office Web Apps サーバー をインターネットのみに接続するように設定した場合は、オンライン ビューアーの UNC サポートを無効にすることを強くお勧めします。UNC サポートを無効にするには、Windows PowerShell のコマンドレット [New-OfficeWebAppsFarm](https://docs.microsoft.com/en-us/powershell/module/officewebapps/new-officewebappsfarm?view=officewebapps-ps) (新規ファーム用) または [Set-OfficeWebAppsFarm](https://docs.microsoft.com/en-us/powershell/module/officewebapps/set-officewebappsfarm?view=officewebapps-ps) (既存ファーム用) を使用して OpenFromUncEnabled パラメーターを False に設定します。
 
 追加のセキュリティ上の理由から、オンライン ビューアーでの表示は、10 MB 以下の Office ファイルに制限されます。
 
 ## オンライン ビューアーの構成オプション
 
-Windows PowerShell の以下のパラメーターを [New-OfficeWebAppsFarm](new-officewebappsfarm.md) (新規ファーム用) または [Set-OfficeWebAppsFarm](set-officewebappsfarm.md) (既存ファーム用) で使用して、オンライン ビューアーを構成できます。
+Windows PowerShell の以下のパラメーターを [New-OfficeWebAppsFarm](https://docs.microsoft.com/en-us/powershell/module/officewebapps/new-officewebappsfarm?view=officewebapps-ps) (新規ファーム用) または [Set-OfficeWebAppsFarm](https://docs.microsoft.com/en-us/powershell/module/officewebapps/set-officewebappsfarm?view=officewebapps-ps) (既存ファーム用) で使用して、オンライン ビューアーを構成できます。
 
   - **OpenFromUrlEnabled**   オンライン ビューアーのオンとオフを切り替えます。このパラメーターは、URL および UNC パスを持つファイルに関してオンライン ビューアーを制御します。新しい Office Web Apps サーバー ファームを作成したとき、既定ではこのパラメーターは False (無効) に設定されています。
 
