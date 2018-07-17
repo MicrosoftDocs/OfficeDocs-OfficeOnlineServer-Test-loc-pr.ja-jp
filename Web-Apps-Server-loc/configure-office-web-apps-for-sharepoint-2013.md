@@ -122,9 +122,13 @@ Office Web Apps サーバー はゾーンの概念を使用して、ホスト (�
 
 ```PowerShell
     $config = (Get-SPSecurityTokenServiceConfig)
+```
 
+```PowerShell
     $config.AllowOAuthOverHttp = $true
+```
 
+```PowerShell
     $config.Update()
 ```
 
