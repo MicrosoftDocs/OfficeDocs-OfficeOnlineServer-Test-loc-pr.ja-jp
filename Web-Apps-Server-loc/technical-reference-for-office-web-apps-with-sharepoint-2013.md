@@ -13,9 +13,9 @@ ms.translationtype: HT
 
  
 
-_**適用先:**Office Web Apps, SharePoint Foundation 2013, SharePoint Server 2013_
+_<strong>適用先:</strong>Office Web Apps, SharePoint Foundation 2013, SharePoint Server 2013_
 
-_**トピックの最終更新日:**2016-12-16_
+_<strong>トピックの最終更新日:</strong>2016-12-16_
 
 **概要:** SPWOPI Windows PowerShell コマンドレットのヘルプなど、Office Web Apps のテクニカル リファレンス記事を紹介します。
 

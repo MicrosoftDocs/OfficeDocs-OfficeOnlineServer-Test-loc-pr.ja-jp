@@ -12,11 +12,11 @@ ms.translationtype: HT
 # SharePoint 2013 の Office Web アプリケーションを構成します。
  
 
-_**適用先:** Office Web Apps, SharePoint Foundation 2013, SharePoint Server 2013_
+_<strong>適用先:</strong>Office Web Apps, SharePoint Foundation 2013, SharePoint Server 2013_
 
-_**トピックの最終更新日:** 2016-12-16_
+_<strong>トピックの最終更新日:</strong>2016-12-16_
 
-**概要:** Office Web Apps を使用するために SharePoint 2013 を構成する方法を説明します。
+**概要:**Office Web Apps を使用するために SharePoint 2013 を構成する方法を説明します。
 
 **対象ユーザー:** IT 担当者
 
