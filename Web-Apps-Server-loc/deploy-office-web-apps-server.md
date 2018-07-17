@@ -391,7 +391,9 @@ NET Framework 3.5 の機能がインストールされてから削除された�
 
 ```PowerShell
     %systemroot%\Microsoft.NET\Framework64\v4.0.30319\aspnet_regiis.exe -iru
+```
 
+```PowerShell
     iisreset /restart /noforce
 ```
 
