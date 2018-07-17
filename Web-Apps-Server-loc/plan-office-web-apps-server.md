@@ -333,7 +333,7 @@ Office Web Apps サーバー トポロジがより複雑になった場合に留
   - **着信と発信を計画する。** インターネットに接続する展開では、すべての発信を NAT デバイス経由でルーティングします。マルチサーバー ファームでは、すべての着信をロード バランサーを使用して処理します。
 
 
-  - **Office Web Apps サーバー ファーム内のすべてのサーバーが 1 つのドメインに参加しており、同じ組織単位 (OU) の一部になっていることを確認する。**この OU に含まれない他のサーバーがファームに参加することを防ぐには、[New-OfficeWebAppsFarm](https://docs.microsoft.com/en-us/powershell/module/officewebapps/new-officewebappsfarm?view=officewebapps-ps) コマンドレットの **FarmOU** パラメーターを使用します。
+  - **Office Web Apps サーバー ファーム内のすべてのサーバーが 1 つのドメインに参加しており、同じ組織単位 (OU) の一部になっていることを確認する。** この OU に含まれない他のサーバーがファームに参加することを防ぐには、[New-OfficeWebAppsFarm](https://docs.microsoft.com/en-us/powershell/module/officewebapps/new-officewebappsfarm?view=officewebapps-ps) コマンドレットの **FarmOU** パラメーターを使用します。
 
 
   - **すべての着信要求にハイパーテキスト転送プロトコル セキュア (HTTPS) を使用する。**
