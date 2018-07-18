@@ -110,9 +110,9 @@ SharePoint 2013 の OpenInClient 機能を設定するには、次の手順の�
         ```PowerShell
             Enable-SPFeature 8A4B8DE2-6FD8-41e9-923C-C7C3C00F8295 -url <SiteCollURL>
         ```
-        ```  
+        
         ここで、*\<SiteCollURL\>* は、サイト コレクションの URL です。
-        ```
+        
     
       - すべてのサイト コレクションに対して OpenInClient 機能を有効にする (ドキュメントをクライアント アプリケーションで開くため) には、次のコマンドを入力します。
 
@@ -125,9 +125,9 @@ SharePoint 2013 の OpenInClient 機能を設定するには、次の手順の�
         ```PowerShell 
             Disable-SPFeature 8A4B8DE2-6FD8-41e9-923C-C7C3C00F8295 -url <SiteCollURL>
         ``` 
-        ```       
+        
         ここで、*\<SiteCollURL\>* は、サイト コレクションの URL です。
-        ```
+        
     
       - すべてのサイト コレクションに対して OpenInClient 機能を無効にする (ドキュメントをブラウザーで開くため) には、次のコマンドを入力します。
 
