@@ -13,9 +13,9 @@ ms.translationtype: HT
 
  
 
-_**適用先:** Office Web Apps Server_
+_<strong>適用先:</strong>Office Web Apps Server_
 
-_**トピックの最終更新日:** 2017-10-05_
+_<strong>トピックの最終更新日:</strong>2017-10-05_
 
 **概要:** SharePoint 2013 および Lync Server 2013 で使用するため、オンプレミスの Office Web Apps サーバーを展開する方法を説明します。
 
@@ -391,7 +391,9 @@ NET Framework 3.5 の機能がインストールされてから削除された�
 
 ```PowerShell
     %systemroot%\Microsoft.NET\Framework64\v4.0.30319\aspnet_regiis.exe -iru
+```
 
+```PowerShell
     iisreset /restart /noforce
 ```
 

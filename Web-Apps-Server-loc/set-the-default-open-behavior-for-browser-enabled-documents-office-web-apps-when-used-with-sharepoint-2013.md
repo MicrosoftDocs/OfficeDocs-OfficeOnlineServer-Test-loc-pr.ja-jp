@@ -13,9 +13,9 @@ ms.translationtype: HT
 
  
 
-_**適用先:** Office Web Apps, SharePoint Foundation 2013, SharePoint Server 2013_
+_<strong>適用先:</strong>Office Web Apps, SharePoint Foundation 2013, SharePoint Server 2013_
 
-_**トピックの最終更新日:** 2016-12-16_
+_<strong>トピックの最終更新日:</strong>2016-12-16_
 
 **概要:** SharePoint サイト コレクションと SharePoint ドキュメント ライブラリで Office ドキュメントを表示する既定の方法を構成する方法について説明します。
 
